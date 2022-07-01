@@ -1,108 +1,146 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# MS-Dashboard
 
-Welcome USER_NAME,
+<!-- ![Responsive screenshot](path) -->
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# The purpose with this project
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Mentor/Student Dashboard
 
-## Gitpod Reminders
+This project is the fourth of five milestone projects that needs to be completed in order for me to receive a diploma in Software Development from The Code Institute https://codeinstitute.net/
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Required technologies for this project: 
 
-`python3 -m http.server`
+A live version of this project can be found at this url: 
 
-A blue button should appear to click: _Make Public_,
+# Table of Content
 
-Another blue button should appear to click: _Open Browser_.
++ [UX](#ux "UX")
+  + [User Demographic](#user-demographic "User Demographic")
+  + [User Stories](#user-stories "User Stories")
+    + [User reading](#user-reading "User reading")
+    + [User submitting](#user-submitting "User submitting")
+  + [User Goals](#user-goals "User goals")
+  + [Project Requirements](#project-requirements "Project Requirements")
+  + [Design diagram](#design-diagram "Design diagram")
++ [Features](#features "Features")
+  + [Existing Features](#existing-features "Existing Features")
+    + [Feature 1](#feature-1 "Feature 1")
+  + [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
++ [Technologies used](#technologies-used "Technologies used")
+  + [Database](#database "Database")
++ [Testing](#testing "Testing")
+  + [Bugs during development](#bugs-during-development "Bugs during development")
+  + [Validator Testing](#validator-testing "Validator Testing")
+  + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
++ [Development and Deployment](#development-and-deployment "Development and Deployment")
++ [Content](#content "Content")
++ [Credits](#credits "Credits")
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## UX
 
-A blue button should appear to click: _Make Public_,
+### User Demographic
 
-Another blue button should appear to click: _Open Browser_.
+To be added
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### User Stories
 
-To log into the Heroku toolbelt CLI:
+To be clarified
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Admin
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+As a **course manager/admin** I can **create a mentor profile** so that **the mentor can use the dashboard as a tool**
 
-------
+As a **course manager/admin** I can **view a list of mentors** so that **I can select one and connect the mentor to a student**
 
-## Release History
+As a **course manager/admin** I can **view a list of mentors** so that **I can select one to read details, edit or delete the mentor if needed.**
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+As a **course manager/admin** I can **create a student profile** so that **I can add the student to a mentor**
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+As a **course manager/admin** I can **view a list of students** so that **I can select one to read details, edit or delete the student if needed.**
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+As a **course manager/admin** I can **select a student** so that **I can change the students selected mentor**
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+Mentor
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+As a **mentor** I can **view a list of students** so that **I can see the ones assigned to me**
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+As a **mentor** I can **select a student from the list of students** so that **I can see the students profile**
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+As a **mentor** I can **read a student profile** so that **I can see the students name, email and course start date and end date**
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+As a **mentor** I can **see a list of sessions in the student profile** so that **I can see the ones that have been conducted**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+As a **mentor** I can **create a session for a student** so that **I can write and save the date for the session, the duration of the session and add notes about the session**
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+As a **mentor** I can **select session notes** so that **I can share them with the course manager**
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+As a **mentor** I can **select a session** so that **I can edit the session details and delete it if necessary**
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Project Requirements
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+To be clarified
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Design diagram
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+To be clarified
 
-------
+[Back to top](#ms-dashboard)
 
-## FAQ about the uptime script
+## Features 
 
-**Why have you added this script?**
+To be added
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Existing Features
 
-**How will this affect me?**
+To be added
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+#### Feature 1
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+To be added
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Features Left to Implement
 
-**So….?**
+To be added
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+[Back to top](#ms-dashboard)
 
-**Can I opt out?**
+## Technologies and libraries used
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+List to be updated
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Database
 
-**Anything more?**
+Schema and diagram to be added
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+## Testing 
 
-Happy coding!
+To be added
+
+
+### Bugs during development
+
+List contains bugs encountered during development and solved.
+
+### Validator Testing 
+
+### Unfixed Bugs
+
+Active bugs during development
+
+ [Back to top](#ms-dashboard)
+
+## Development and Deployment
+
+To be added
+
+After those steps were taken the application was deployed at the following link: 
+
+## Content 
+
+
+## Credits 
+
+### For code inspiration, design inputs, help and advice.
+
+### Acknowledgment
