@@ -1,0 +1,1 @@
+web: gunicorn msdashboard2022.wsgi
