@@ -20,5 +20,6 @@ from dashboard import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('', views.start_page, name='start'),
 ]
