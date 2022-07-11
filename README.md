@@ -126,7 +126,8 @@ List contains bugs encountered during development and solved.
 
 ### Unfixed Bugs
 
-Active bugs during development
+- URLS of AllAuth is broken and returns error
+  - Update settings.py with 'allauth.socialaccount' as installed app to correct
 
  [Back to top](#ms-dashboard)
 
