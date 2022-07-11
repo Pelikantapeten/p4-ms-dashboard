@@ -80,3 +80,23 @@ class UserAdminCreationForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+
+class UserAdminChangeForm(forms.ModelForm):
+    """A form for updating users. Includes all the fields on
+    the user, but replaces the password field with admin's
+    password hash display field.
+    """
+
+    class Meta:
+        """
+        Meta class for fields
+        """
+        model = User
+        fields = ['email', 'password', 'is_active', 'admin', 'staff', 'name']
+
+    def clean_password(self):
+        """
+        Returns the intitial valure of the input from the user
+        """
+        return self.initial["password"]
