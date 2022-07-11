@@ -162,3 +162,40 @@ class StudentMentorCard(models.Model):
         Returns the URL to access a detail record for this student card.
         """
         return reverse('student-mentor-card', args=[str(self.id)])
+# more models
+
+
+class Student(models.Model):
+    """
+    Model for student details
+    """
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    date_program_start = models.DateField(
+        'Program start date',
+        null=True,
+        blank=True
+        )
+    date_program_end = models.DateField(
+        'Program end date',
+        null=True,
+        blank=True
+        )
+
+    class Meta:
+        """
+        Meta fields
+        """
+        ordering = ['last_name', 'first_name']
+
+    def get_absolute_url(self):
+        """
+        Returns the URL to access a particular student.
+        """
+        return reverse('student-detail', args=[str(self.id)])
+
+    def __str__(self):
+        """
+        String for representing the Model object.
+        """
+        return f'{self.last_name}, {self.first_name}'
