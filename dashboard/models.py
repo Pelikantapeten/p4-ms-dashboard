@@ -114,3 +114,17 @@ class User(AbstractBaseUser):
         return self.admin
 
     objects = UserManager()
+
+# Dashboard classes
+
+
+class Mentor(models.Model):
+    """
+    Class that allows admins to activate a Mentor 
+    (Adding a registred mentor to pool)
+    """
+    mentor = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        """String that represent the model object"""
+        return str(self.mentor)
