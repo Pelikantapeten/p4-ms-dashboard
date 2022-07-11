@@ -113,3 +113,4 @@ class User(AbstractBaseUser):
         "Is the user a admin member?"
         return self.admin
 
+    objects = UserManager()
