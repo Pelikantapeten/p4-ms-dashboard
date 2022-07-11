@@ -49,3 +49,7 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(User, UserAdmin)
+admin.site.register(StudentMentorCard)
+admin.site.register(Student)
+admin.site.register(Mentor)
+admin.site.register(StudentSession)
