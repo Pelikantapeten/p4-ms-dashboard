@@ -162,7 +162,72 @@ class StudentMentorCard(models.Model):
         Returns the URL to access a detail record for this student card.
         """
         return reverse('student-mentor-card', args=[str(self.id)])
-# more models
+
+
+class StudentSession(models.Model):
+    """
+    Model representing a specific
+    session between the mentor and the
+    student
+    """
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        help_text='Unique ID for this session'
+        )
+    StudentMentorCard = models.ForeignKey(
+        'StudentMentorCard',
+        on_delete=models.RESTRICT,
+        null=True
+        )
+    summary = models.TextField(
+        max_length=2000,
+        help_text='Enter a summary of session with student',
+        blank=True
+        )
+    session_date = models.DateField('Session date', null=True, blank=True)
+
+    MEETING_TYPE = (
+        ('i', 'Introduction'),
+        ('1', 'Milestone Proj. 1'),
+        ('2', 'Milestone Proj. 2'),
+        ('3', 'Milestone Proj. 3'),
+        ('4', 'Milestone Proj. 4'),
+        ('5', 'Milestone Proj. 5'),
+    )
+
+    type = models.CharField(
+        'Type of session',
+        max_length=1,
+        choices=MEETING_TYPE,
+        blank=True,
+        default='i',
+        help_text='Type of session',
+    )
+    MEETING_SUBJECT = (
+        ('1', 'Milestone meeting 1'),
+        ('2', 'Milestone meeting 2'),
+        ('3', 'Milestone meeting 3'),
+    )
+
+    subject = models.CharField(
+        'Type of subject',
+        max_length=1,
+        choices=MEETING_SUBJECT,
+        blank=True,
+        default='1',
+        help_text='Type of subject',
+    )
+
+    class Meta:
+        """
+        Meta fields
+        """
+        ordering = ['session_date']
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return f'{self.id} ({self.StudentMentorCard.student})'
 
 
 class Student(models.Model):
