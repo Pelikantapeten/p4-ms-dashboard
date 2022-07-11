@@ -33,7 +33,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["ms-dashboard2022.herokuapp.com", "localhost"]
 
-
+# Allauth authentication backend
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,11 +46,24 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'dashboard',
 ]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '..'
+LOGOUT_REDIRECT_URL = '..'
+
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
