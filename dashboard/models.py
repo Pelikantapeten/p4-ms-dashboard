@@ -128,3 +128,37 @@ class Mentor(models.Model):
     def __str__(self):
         """String that represent the model object"""
         return str(self.mentor)
+
+
+class StudentMentorCard(models.Model):
+    """
+    Model representing a card that
+    contains the mentor and
+    the student paired.
+    """
+    # Foreign Key used because StudentMentorCard can only have one student.
+    student = models.ForeignKey(
+        'Student', on_delete=models.SET_NULL, null=True
+        )
+    summary = models.TextField(
+        max_length=2000,
+        help_text='Enter a summary of Student '
+        'overall progress from Mentor perspective.',
+        blank=True
+        )
+    # List of mentors that can be connected to the student.
+    mentor = models.ManyToManyField(
+        Mentor, help_text='Select Mentor for this student'
+        )
+
+    def __str__(self):
+        """
+        String for representing the Model object.
+        """
+        return str(self.student)
+
+    def get_absolute_url(self):
+        """
+        Returns the URL to access a detail record for this student card.
+        """
+        return reverse('student-mentor-card', args=[str(self.id)])
