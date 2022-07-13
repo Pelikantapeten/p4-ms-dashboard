@@ -5,11 +5,13 @@
   {% if studentmentorcard_list %}
   <ul>
     {% for studentmentorcard in studentmentorcard_list %}
+    {% if request.user == studentmentorcard.mentor %}
       <br>
       <li>
         Name: <a href="{{ studentmentorcard.get_absolute_url }}">{{ studentmentorcard.student }}</a> 
       </li>
       <br>
+    {% endif %}
     {% endfor %}
   </ul>
   {% else %}
