@@ -117,18 +117,6 @@ class User(AbstractBaseUser):
 # Dashboard classes
 
 
-class Mentor(models.Model):
-    """
-    Class that allows admins to activate a Mentor 
-    (Adding a registred mentor to pool)
-    """
-    mentor = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    def __str__(self):
-        """String that represent the model object"""
-        return str(self.mentor)
-
-
 class StudentMentorCard(models.Model):
     """
     Model representing a card that
@@ -146,8 +134,10 @@ class StudentMentorCard(models.Model):
         blank=True
         )
     # List of mentors that can be connected to the student.
-    mentor = models.ManyToManyField(
-        Mentor, help_text='Select Mentor for this student'
+    mentor = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        null=True
         )
 
     def __str__(self):
@@ -172,6 +162,11 @@ class StudentSession(models.Model):
     StudentMentorCard = models.ForeignKey(
         'StudentMentorCard',
         on_delete=models.RESTRICT,
+        null=True
+        )
+    mentor = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
         null=True
         )
     summary = models.TextField(
@@ -221,7 +216,7 @@ class StudentSession(models.Model):
 
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.id} ({self.StudentMentorCard.student})'
+        return f'{self.session_date} ({self.StudentMentorCard.student})'
 
 
 class Student(models.Model):
