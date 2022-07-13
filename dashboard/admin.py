@@ -1,12 +1,14 @@
 """
 Admin rules for dashboard app
 """
+from allauth.account.models import EmailAddress
+from allauth.socialaccount.models import SocialToken, SocialAccount, SocialApp
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth import get_user_model
 from django.contrib.sites.models import Site
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from allauth.socialaccount.models import SocialToken, SocialAccount, SocialApp
+
 from .models import Student, Mentor, StudentMentorCard, StudentSession
 
 from .forms import UserAdminCreationForm, UserAdminChangeForm
@@ -15,6 +17,7 @@ User = get_user_model()
 
 
 # Unregistrations of tables in Admin
+admin.site.unregister(EmailAddress)
 admin.site.unregister(Site)
 admin.site.unregister(Group)
 admin.site.unregister(SocialToken)
