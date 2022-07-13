@@ -3,7 +3,7 @@ Views for app Dashboard
 """
 from django.shortcuts import render
 from django.views import generic
-from dashboard.models import StudentMentorCard
+from dashboard.models import StudentMentorCard, StudentSession
 
 
 def start_page(request):
@@ -25,3 +25,19 @@ class MentorCardDetails(generic.DetailView):
     Detailed view class for mentorcards
     """
     model = StudentMentorCard
+
+
+def session_list(request):
+    """
+    Sessions
+    """
+    sessions = StudentSession.objects.all()
+    return render(request, 'sessions.html', {'sessions': sessions})
+
+
+def session_detail(request, id):
+    """
+    Sessions details
+    """
+    id = StudentSession.objects.get(id=id)
+    return render(request, 'session_detail.html', {'studentsession': id})
