@@ -1,7 +1,6 @@
 """
 Models for app dashboard
 """
-import uuid  # Required for creating unique id for mentor/student session
 from django.db import models
 #  from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import (
@@ -170,11 +169,6 @@ class StudentSession(models.Model):
     session between the mentor and the
     student
     """
-    id = models.UUIDField(
-        primary_key=True,
-        default=uuid.uuid4,
-        help_text='Unique ID for this session'
-        )
     StudentMentorCard = models.ForeignKey(
         'StudentMentorCard',
         on_delete=models.RESTRICT,
