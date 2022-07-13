@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{ studentsession.student }}</h2>
+
+<ul>
+ <li><strong>Date of session:</strong> {{ studentsession.session_date }}</li>
+ <li><strong>Type of session:</strong> {{ studentsession.get_type_display }}</li>
+ <li><strong>Subject of session:</strong> {{ studentsession.get_subject_display }}</li>
+ <li><strong>Session notes:</strong>
+    <ul>
+        <li><p>{{ studentsession.summary }}</p></li>
+    </ul>
+</li>
+</ul>
+
+{% endblock content %}
