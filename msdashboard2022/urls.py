@@ -22,4 +22,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', views.start_page, name='start'),
+    path('mentorcards/', views.MentorCard.as_view(
+        template_name='mentorcards.html'),
+        name='mentorcards'
+        ),
+    path('mentorcards/<int:pk>', views.MentorCardDetails.as_view(
+        template_name='mentorcard_detail.html'),
+        name='student-mentor-card'
+        ),
 ]
