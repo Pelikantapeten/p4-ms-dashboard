@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Sessions</h1>
+
+<ul>
+ {% for session in sessions %}
+  <li><a href="{% url 'session-detail' session.id %}">{{ session.StudentMentorCard }}</a></li>
+    <ul>
+        <li>
+            {{ session.session_date }}
+        </li>
+    </ul>
+ {% endfor %}
+</ul>
+
+
+{% endblock content %}
