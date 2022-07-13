@@ -92,7 +92,7 @@ class User(AbstractBaseUser):
         """
         Return email as string
         """
-        return str(self.email)
+        return str(self.name)
 
     def has_perm(self, perm, obj=None):
         "Does the user have a specific permission?"
