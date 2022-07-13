@@ -5,14 +5,16 @@
 <h1>Sessions</h1>
 
 <ul>
- {% for session in sessions %}
+{% for session in sessions %}
+{% if request.user == session.mentor %}
   <li><a href="{% url 'session-detail' session.id %}">{{ session.StudentMentorCard }}</a></li>
     <ul>
         <li>
             {{ session.session_date }}
         </li>
     </ul>
- {% endfor %}
+{% endif %}
+{% endfor %}
 </ul>
 
 
