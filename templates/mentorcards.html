@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>List of mentors student cards</h1>
+  {% if studentmentorcard_list %}
+  <ul>
+    {% for studentmentorcard in studentmentorcard_list %}
+      <br>
+      <li>
+        Name: <a href="{{ studentmentorcard.get_absolute_url }}">{{ studentmentorcard.student }}</a> 
+      </li>
+      <br>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no paird students with mentors</p>
+  {% endif %}
+  {% endblock content %}
