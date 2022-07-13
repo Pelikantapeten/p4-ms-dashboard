@@ -263,4 +263,4 @@ class Student(models.Model):
         """
         String for representing the Model object.
         """
-        return f'{self.last_name}, {self.first_name}'
+        return f'{self.first_name} {self.last_name}'
