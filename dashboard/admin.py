@@ -2,9 +2,11 @@
 Admin rules for dashboard app
 """
 from django.contrib import admin
-# from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group
 from django.contrib.auth import get_user_model
+from django.contrib.sites.models import Site
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from allauth.socialaccount.models import SocialToken, SocialAccount, SocialApp
 from .models import Student, Mentor, StudentMentorCard, StudentSession
 
 from .forms import UserAdminCreationForm, UserAdminChangeForm
@@ -12,8 +14,12 @@ from .forms import UserAdminCreationForm, UserAdminChangeForm
 User = get_user_model()
 
 
-# Remove Group Model from admin. We're not using it.
-# admin.site.unregister(Group)
+# Unregistrations of tables in Admin
+admin.site.unregister(Site)
+admin.site.unregister(Group)
+admin.site.unregister(SocialToken)
+admin.site.unregister(SocialAccount)
+admin.site.unregister(SocialApp)
 
 
 class UserAdmin(BaseUserAdmin):
