@@ -162,19 +162,19 @@ class StudentSession(models.Model):
     StudentMentorCard = models.ForeignKey(
         'StudentMentorCard',
         on_delete=models.RESTRICT,
-        null=True
+        null=True, blank=False
         )
     mentor = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        null=True
+        null=True, blank=False
         )
     summary = models.TextField(
         max_length=2000,
         help_text='Enter a summary of session with student',
-        blank=True
+        blank=False
         )
-    session_date = models.DateField('Session date', null=True, blank=True)
+    session_date = models.DateField('Session date', null=True, blank=False)
 
     MEETING_TYPE = (
         ('i', 'Introduction'),
@@ -189,7 +189,7 @@ class StudentSession(models.Model):
         'Type of session',
         max_length=1,
         choices=MEETING_TYPE,
-        blank=True,
+        blank=False,
         default='i',
         help_text='Type of session',
     )
@@ -203,7 +203,7 @@ class StudentSession(models.Model):
         'Type of subject',
         max_length=1,
         choices=MEETING_SUBJECT,
-        blank=True,
+        blank=False,
         default='1',
         help_text='Type of subject',
     )
