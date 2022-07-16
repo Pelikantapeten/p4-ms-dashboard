@@ -102,3 +102,36 @@ class UserAdminChangeForm(forms.ModelForm):
         Returns the intitial valure of the input from the user
         """
         return self.initial["password"]
+
+
+class CreateSession(forms.ModelForm):
+    """
+    Form for creating a student/mentor session
+    """
+    class Meta:
+        """
+        Generate which fields should be displayed.
+        """
+        model = StudentSession
+        fields = (
+            'StudentMentorCard',
+            'summary',
+            'session_date',
+            'type',
+            'subject',
+        )
+        labels = {
+            'StudentMentorCard': 'Student',
+            'summary': 'Write a summary of the session',
+            'session_date': 'Choose date of the session',
+            'type': 'Choose type of session',
+            'subject': 'Choose subject of session',
+        }
+        widgets = {
+            'session_date': FormsDatePicker,
+        }
+        help_texts = {
+            'summary': None,
+            'type': None,
+            'subject': None,
+        }
