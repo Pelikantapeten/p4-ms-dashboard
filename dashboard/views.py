@@ -1,8 +1,9 @@
 """
 Views for app Dashboard
 """
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
+from django.contrib import messages
 from dashboard.models import StudentMentorCard, StudentSession
 from .forms import CreateSession
 
