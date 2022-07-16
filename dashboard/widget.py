@@ -1,7 +1,15 @@
 """
 Widgets for App Dashboard
 
-Classes: FormsDatePicker
+Widgets:
+FormsDatePicker - Creates date picker field for forms
 """
+from django import forms
 
-# Widgets
+
+class FormsDatePicker(forms.DateInput):
+    """
+    Widget that will allow date picker in forms.
+    Insipired by https://nancylin.xyz/
+    """
+    input_type = 'date'
