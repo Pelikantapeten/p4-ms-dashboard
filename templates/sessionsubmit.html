@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="col-12">
+    <div>
+        {% if user.is_authenticated %}
+        <div class="col-sm-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2>Create student session:</h2>
+                    <hr />
+                    <form method="POST" enctype="multipart/form-data">
+                        {{ create_session_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
