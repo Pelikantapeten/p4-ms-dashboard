@@ -217,6 +217,12 @@ class StudentSession(models.Model):
         """String for representing the Model object."""
         return f'{self.session_date} ({self.StudentMentorCard.student})'
 
+    def get_absolute_url(self):
+        """
+        Returns the URL to access a session.
+        """
+        return reverse('student-session', args=[str(self.id)])
+
 
 class Student(models.Model):
     """
