@@ -135,3 +135,18 @@ class CreateSession(forms.ModelForm):
             'type': None,
             'subject': None,
         }
+
+    def __init__(self, *args, **kwargs):
+        """
+        Function that returns the Students
+        that belong to a specific mentor to the
+        selection of students in the form. Created
+        by searching for information on https://stackoverflow.com/
+        """
+        user = kwargs.pop('user', None)
+        super(CreateSession, self).__init__(*args, **kwargs)
+        if user:
+            studentmentorcard = StudentMentorCard.objects.filter(
+                Q(mentor=user) | Q(mentor=user)
+                )
+            self.fields['StudentMentorCard'].queryset = studentmentorcard
