@@ -3,7 +3,8 @@ Forms used by dashboard app
 """
 from django import forms
 from django.contrib.auth import get_user_model
-from .models import StudentSession
+from django.db.models import Q
+from .models import StudentSession, StudentMentorCard
 from .widget import FormsDatePicker
 
 User = get_user_model()
