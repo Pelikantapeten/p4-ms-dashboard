@@ -45,3 +45,32 @@ def session_detail(request, id):
     return render(request, 'session_detail.html', {'studentsession': id})
 
 
+class StudentSessionView(CreateView):
+    """
+    View for the submitform for creating
+    a student session.
+    """
+    model = StudentSession
+    form_class = CreateSession
+    template_name = 'sessionsubmit.html'
+    success_url = '../sessions/'
+
+    def form_valid(self, form):
+        """
+        Function that validates the user
+        when using the form
+        """
+        form.instance.mentor = self.request.user
+        return super(StudentSessionView, self).form_valid(form)
+
+    def get_form_kwargs(self, *args, **kwargs):
+        """
+        Function matching the query from
+        CreateSession in forms and matches with
+        current user.
+        """
+        kwargs = super(StudentSessionView, self).get_form_kwargs(
+            *args, **kwargs
+            )
+        kwargs['user'] = self.request.user
+        return kwargs
