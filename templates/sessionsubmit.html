@@ -12,7 +12,7 @@
                     <h2>Create student session:</h2>
                     <hr />
                     <form method="POST" enctype="multipart/form-data">
-                        {{ create_session_form | crispy }}
+                        {{ form | crispy }}
                         {% csrf_token %}
                         <button type="submit">Submit</button>
                     </form>
