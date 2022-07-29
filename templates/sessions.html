@@ -1,21 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1>Sessions</h1>
-
-<ul>
-{% for session in sessions %}
-{% if request.user == session.mentor %}
-  <li><a href="{% url 'session-detail' session.id %}">{{ session.StudentMentorCard }}</a></li>
-    <ul>
-        <li>
-            {{ session.session_date }}
-        </li>
-    </ul>
-{% endif %}
-{% endfor %}
-</ul>
-<a href="{% url 'sessionsubmit' %}">Create a new session</a>
-
-{% endblock content %}
+  <h1>Your sessions:</h1>
+  
+  <ul>
+    {% for studentsession in studentsession_list %}
+    {% if request.user == studentsession.mentor %}
+      <br>
+      <li>
+        Session: <a href="{{ studentsession.get_absolute_url }}">{{ studentsession }}</a>
+      </li>
+      <br>
+    {% endif %}
+    {% endfor %}
+  </ul>
+  <a href="{% url 'sessionsubmit' %}">Create a new session</a>
+  {% endblock content %}
