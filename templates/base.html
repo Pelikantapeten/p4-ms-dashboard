@@ -24,7 +24,7 @@
       <ul>
         {% if user.is_authenticated %}
         <li><a href="{% url 'mentorcards' %}">My Students</a></li>
-        <li><a href="{% url 'session-list' %}">Sessions</a></li>
+        <li><a href="{% url 'student-sessions' %}">Sessions</a></li>
         <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
         {% else %}
         <li><a href="{% url 'account_login' %}">Sign In</a></li>
