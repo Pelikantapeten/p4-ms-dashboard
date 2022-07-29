@@ -30,8 +30,14 @@ urlpatterns = [
         template_name='mentorcard_detail.html'),
         name='student-mentor-card'
         ),
-    path('sessions/', views.session_list, name='session-list'),
-    path('sessions/<int:id>/', views.session_detail, name='session-detail'),
+    path('sessions/', views.SessionList.as_view(
+        template_name='sessions.html'),
+        name='student-sessions'
+    ),
+    path('sessions/<int:pk>/', views.SessionDetalis.as_view(
+        template_name='session_detail.html'),
+        name='student-session'
+    ),
     path(
         'sessionsubmit/',
         views.StudentSessionView.as_view(),

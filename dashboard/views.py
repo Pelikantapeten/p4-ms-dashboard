@@ -39,7 +39,7 @@ class SessionList(generic.ListView):
 
 class SessionDetalis(generic.DetailView):
     """
-    Detailed view class for mentorcards
+    Detailed view class for sessions
     """
     model = StudentSession
 
