@@ -30,12 +30,11 @@ class MentorCardDetails(generic.DetailView):
     model = StudentMentorCard
 
 
-def session_list(request):
+class SessionList(generic.ListView):
     """
-    Sessions
+    View class for mentorcards
     """
-    sessions = StudentSession.objects.all()
-    return render(request, 'sessions.html', {'sessions': sessions})
+    model = StudentSession
 
 
 def session_detail(request, id):
