@@ -32,17 +32,16 @@ class MentorCardDetails(generic.DetailView):
 
 class SessionList(generic.ListView):
     """
-    View class for mentorcards
+    View class for list of sessions
     """
     model = StudentSession
 
 
-def session_detail(request, id):
+class SessionDetalis(generic.DetailView):
     """
-    Sessions details
+    Detailed view class for mentorcards
     """
-    id = StudentSession.objects.get(id=id)
-    return render(request, 'session_detail.html', {'studentsession': id})
+    model = StudentSession
 
 
 class StudentSessionView(CreateView):
