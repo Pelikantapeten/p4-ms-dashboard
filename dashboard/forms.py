@@ -151,3 +151,34 @@ class CreateSession(forms.ModelForm):
                 Q(mentor=user) | Q(mentor=user)
                 )
             self.fields['StudentMentorCard'].queryset = studentmentorcard
+
+
+class EditSession(forms.ModelForm):
+    """
+    Form for editing a student/mentor session
+    """
+    class Meta:
+        """
+        Generate which fields should be displayed.
+        """
+        model = StudentSession
+        fields = (
+            'summary',
+            'session_date',
+            'type',
+            'subject',
+        )
+        labels = {
+            'summary': 'Write a summary of the session',
+            'session_date': 'Choose date of the session',
+            'type': 'Choose type of session',
+            'subject': 'Choose subject of session',
+        }
+        widgets = {
+            'session_date': FormsDatePicker,
+        }
+        help_texts = {
+            'summary': None,
+            'type': None,
+            'subject': None,
+        }
