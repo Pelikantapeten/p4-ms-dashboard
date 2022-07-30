@@ -73,3 +73,5 @@ class StudentSessionView(CreateView):
             )
         kwargs['user'] = self.request.user
         return kwargs
+
+
