@@ -75,3 +75,12 @@ class StudentSessionView(CreateView):
         return kwargs
 
 
+class UpdateSession(UpdateView):
+    """
+    View to updated existing sessions
+    with student.
+    """
+    model = StudentSession
+    template_name = 'sessionedit.html'
+    form_class = EditSession
+    success_url = '../sessions/'
