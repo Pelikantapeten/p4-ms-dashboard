@@ -4,9 +4,9 @@ Views for app Dashboard
 from django.shortcuts import render
 from django.views import generic
 #  from django.contrib import messages
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from dashboard.models import StudentMentorCard, StudentSession
-from .forms import CreateSession
+from .forms import CreateSession, EditSession
 
 
 def start_page(request):
