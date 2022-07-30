@@ -13,6 +13,7 @@
         <li><p>{{ studentsession.summary }}</p></li>
     </ul>
 </li>
+<li><a href="{% url 'sessionedit' studentsession.pk %}">Edit Session</a></li>
 </ul>
 
 {% endblock content %}
