@@ -43,4 +43,9 @@ urlpatterns = [
         views.StudentSessionView.as_view(),
         name='sessionsubmit'
     ),
+    path(
+        'sessionupdate/<int:pk>',
+        views.UpdateSession.as_view(),
+        name='sessionedit'
+    ),
 ]
