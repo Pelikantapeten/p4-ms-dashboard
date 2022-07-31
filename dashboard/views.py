@@ -4,7 +4,7 @@ Views for app Dashboard
 from django.shortcuts import render
 from django.views import generic
 #  from django.contrib import messages
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from dashboard.models import StudentMentorCard, StudentSession
 from .forms import CreateSession, EditSession
 
