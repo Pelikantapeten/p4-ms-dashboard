@@ -48,4 +48,9 @@ urlpatterns = [
         views.UpdateSession.as_view(),
         name='sessionedit'
     ),
+    path(
+        'delete/<pk>',
+        views.SessionDeleteView.as_view(template_name="confirm_delete.html"),
+        name='delete-session'
+    )
 ]
