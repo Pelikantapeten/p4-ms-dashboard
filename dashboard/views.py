@@ -84,3 +84,12 @@ class UpdateSession(UpdateView):
     template_name = 'sessionedit.html'
     form_class = EditSession
     success_url = '../sessions/'
+
+
+class SessionDeleteView(DeleteView):
+    """
+    View to delete existing student
+    session
+    """
+    model = StudentSession
+    success_url = '../sessions/'
