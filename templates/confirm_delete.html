@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="col-12">
+    <div>
+        {% if user.is_authenticated %}
+        <div class="col-sm-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form method="POST">
+                        {{ form | crispy }}
+                        {% csrf_token %}
+                        <p>Are you sure you want to delete "{{ object }}"?</p>
+                        <input type="submit" value="Confirm">
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
