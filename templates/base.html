@@ -30,6 +30,22 @@
           {% endif %}
         </li>
       </ul>
+      <!-- Student search form Inspired by: https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
+      {% if user.is_authenticated %}
+      <form class="form-inline mr-4" action="{% url 'mentorcards' %}">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search student">
+        <button class="btn btn-secondary" type="submit">Go</button>
+      </form>
+      <!-- Edit profile and logout dropdown Inspired by: https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
+      <div class="dropdown" id="account-dropdown-btn">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{request.user}}</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Edit Profile</a>
+        <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+        </div>
+      </div>
+      {% endif %}
     </nav>
     {% block content %}
     {% endblock %}
