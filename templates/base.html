@@ -6,30 +6,31 @@
   </head>
   <body>
     {% block body %}
+    <!-- Navbar-top -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <!-- Navbar logo-text -->
+      <a class="navbar-brand" href="{% url 'home' %}">MDash</a>
 
-    {% if messages %}
-    <div>
-      <strong>Messages:</strong>
-      <ul>
-        {% for message in messages %}
-        <li>{{message}}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
-    <div>
-      <strong>Menu:</strong>
-      <ul>
+      <!-- Main menu -->
+      <ul class="navbar-nav mr-auto">
         {% if user.is_authenticated %}
-        <li><a href="{% url 'mentorcards' %}">My Students</a></li>
-        <li><a href="{% url 'student-sessions' %}">Sessions</a></li>
-        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
-        {% else %}
-        <li><a href="{% url 'account_login' %}">Sign In</a></li>
-        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'mentorcards' %}">Students</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'student-sessions' %}" id="navbardrop" data-toggle="dropdown">Student Sessions</a>
+          <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'student-sessions' %}">My Sessions</a>
+              <a class="dropdown-item" href="{% url 'sessionsubmit' %}">Create Session</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          {% else %}
+          <a class="nav-link" href="{% url 'account_login' %}">Sign In</a>
+          {% endif %}
+        </li>
       </ul>
-    </div>
+    </nav>
     {% block content %}
     {% endblock %}
     {% endblock %}
