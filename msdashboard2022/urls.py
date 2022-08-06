@@ -21,7 +21,7 @@ from dashboard import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', views.start_page, name='start'),
+    path('', views.start_page, name='home'),
     path('mentorcards/', views.MentorCard.as_view(
         template_name='mentorcards.html'),
         name='mentorcards'
