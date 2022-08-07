@@ -42,11 +42,37 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Edit Profile</a>
         <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+          <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="#logoutModal">Logout</a>
         </div>
       </div>
       {% endif %}
     </nav>
+    <!-- Logout Modal code inspired from: https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
+    <div class="modal fade" id="logoutModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Logout Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Sign Out - {{request.user}}</h4>
+          </div>
+          <!-- Logout Modal body -->
+          <div class="modal-body">
+            Are you sure you want to sign out?
+          </div>
+          <!-- Logout Modal footer -->
+          <div class="modal-footer">
+            <form method="post" action="{% url 'account_logout' %}">
+              {% csrf_token %}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+              {% endif %}
+              <button type="submit" class="btn btn-success">Sign Out</button>
+            </form>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
     {% block content %}
     {% endblock %}
     {% endblock %}
