@@ -52,5 +52,10 @@ urlpatterns = [
         'delete/<pk>',
         views.SessionDeleteView.as_view(template_name="confirm_delete.html"),
         name='delete-session'
+    ),
+    path(
+        'search_students',
+        views.search_students,
+        name="search_students"
     )
 ]
