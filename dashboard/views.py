@@ -93,3 +93,29 @@ class SessionDeleteView(DeleteView):
     """
     model = StudentSession
     success_url = '../sessions/'
+
+
+def search_students(request):
+    """
+    function for search form in navbar
+    inspired by:
+    https://github.com/flatplanet/Django-Club-Youtube-Playlist
+    """
+    if request.method == "POST":
+        searched = request.POST['searched']
+        students = StudentMentorCard.objects.filter(
+            mentor=request.user
+            ).filter(
+            student__name__icontains=searched,
+        )
+        return render(
+            request,
+            'search_students.html',
+            {'searched': searched, 'students': students}
+        )
+    else:
+        return render(
+            request,
+            'search_students.html',
+            {}
+        )
