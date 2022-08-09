@@ -118,6 +118,7 @@ class CreateSession(forms.ModelForm):
             'StudentMentorCard',
             'summary',
             'session_date',
+            'time_spent',
             'type',
             'subject',
         )
@@ -125,6 +126,7 @@ class CreateSession(forms.ModelForm):
             'StudentMentorCard': 'Student',
             'summary': 'Write a summary of the session',
             'session_date': 'Choose date of the session',
+            'time_spent': 'Choose lenght of the session',
             'type': 'Choose type of session',
             'subject': 'Choose subject of session',
         }
@@ -165,12 +167,14 @@ class EditSession(forms.ModelForm):
         fields = (
             'summary',
             'session_date',
+            'time_spent',
             'type',
             'subject',
         )
         labels = {
             'summary': 'Write a summary of the session',
             'session_date': 'Choose date of the session',
+            'time_spent': 'Choose lenght of the session',
             'type': 'Choose type of session',
             'subject': 'Choose subject of session',
         }
