@@ -32,8 +32,11 @@
       </ul>
       <!-- Student search form Inspired by: https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
       {% if user.is_authenticated %}
-      <form class="form-inline mr-4" action="{% url 'mentorcards' %}">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search student">
+      <form class="form-inline mr-4" method="POST" action="{% url 'search_students' %}">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" 
+        placeholder="Search student" aria-label="Search Student"
+        name="searched">
         <button class="btn btn-secondary" type="submit">Go</button>
       </form>
       <!-- Edit profile and logout dropdown Inspired by: https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
