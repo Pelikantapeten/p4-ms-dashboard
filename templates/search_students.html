@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if searched %}
+    <h1>You Searched for {{ searched }}</h1>
+    <br/>
+    {% for student in students %}
+      {{ student }}<br/>
+    {% endfor %}
+    {% else %}
+    <h1>You did not perform a search for a student!</h1>
+    {% endif %}
+{% endblock content %}
