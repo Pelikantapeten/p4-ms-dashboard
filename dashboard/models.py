@@ -228,8 +228,7 @@ class Student(models.Model):
     """
     Model for student details
     """
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     date_program_start = models.DateField(
         'Program start date',
         null=True,
@@ -245,7 +244,7 @@ class Student(models.Model):
         """
         Meta fields
         """
-        ordering = ['last_name', 'first_name']
+        ordering = ['name']
 
     def get_absolute_url(self):
         """
@@ -257,4 +256,4 @@ class Student(models.Model):
         """
         String for representing the Model object.
         """
-        return f'{self.first_name} {self.last_name}'
+        return f'{self.name}'
