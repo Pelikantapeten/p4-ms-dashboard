@@ -175,6 +175,21 @@ class StudentSession(models.Model):
         )
     session_date = models.DateField('Session date', null=True, blank=False)
 
+    TIME_OF_SESSION = (
+        (15, '15 minutes'),
+        (30, '30 minutes'),
+        (45, '45 minutes'),
+        (60, '60 minutes'),
+    )
+
+    time_spent = models.IntegerField(
+        'Length of session',
+        choices=TIME_OF_SESSION,
+        blank=False,
+        default=15,
+        help_text='Lenght of session'
+    )
+
     MEETING_TYPE = (
         ('i', 'Introduction'),
         ('1', 'Milestone Proj. 1'),
