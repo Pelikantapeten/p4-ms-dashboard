@@ -1,1 +1,17 @@
 {% extends "base.html" %}
+
+{% block content %}
+  <h1>Time Report:</h1>
+  
+  <ul>
+    {% for studentsession in studentsession_list %}
+    {% if request.user == studentsession.mentor %}
+      <br>
+      <li>
+        Student: {{ studentsession }} Date: {{ studentsession.session_date }} Duration: {{ studentsession.time_spent }} minutes</a>
+      </li>
+      <br>
+    {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock %}
