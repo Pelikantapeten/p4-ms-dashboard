@@ -43,7 +43,7 @@
       <div class="dropdown" id="account-dropdown-btn">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{request.user}}</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Edit Profile</a>
+          <a class="dropdown-item" href="{% url 'time-report' %}">Time Report</a>
         <div class="dropdown-divider"></div>
           <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="#logoutModal">Logout</a>
         </div>
