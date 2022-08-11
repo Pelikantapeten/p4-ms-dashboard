@@ -230,7 +230,7 @@ class StudentSession(models.Model):
 
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.session_date} ({self.StudentMentorCard.student})'
+        return f'{self.StudentMentorCard}'
 
     def get_absolute_url(self):
         """
