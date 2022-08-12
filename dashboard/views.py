@@ -45,13 +45,6 @@ class SessionDetalis(generic.DetailView):
     model = StudentSession
 
 
-class TimeReportView(generic.ListView):
-    """
-    List time of sessions
-    """
-    model = StudentSession
-
-
 class StudentSessionView(CreateView):
     """
     View for the submitform for creating
