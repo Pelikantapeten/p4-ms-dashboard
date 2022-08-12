@@ -120,3 +120,29 @@ def search_students(request):
             'search_students.html',
             {}
         )
+
+
+def time_report_view(request):
+    """
+    View for Time Report
+    """
+    # Calculates the total minutes and displays in format
+    # (hours):(minutes)
+    # Inspired by https://w3schools.com
+    total_minutes = StudentSession.objects.filter(
+        mentor=request.user
+        ).aggregate(
+            aggregate_total=Sum("time_spent")
+        )["aggregate_total"]
+    hours = total_minutes // 60
+    minutes = total_minutes % 60
+    hours_total = f"{hours}:{minutes}"
+    
+    context = {
+        'hours_total': hours_total,
+    }
+    return render(
+        request,
+        'time-report.html',
+        context
+    )
