@@ -58,8 +58,5 @@ urlpatterns = [
         views.search_students,
         name="search_students"
     ),
-    path('time-report/', views.TimeReportView.as_view(
-        template_name='time-report.html'),
-        name='time-report'
-    ),
+    path('time-report/', views.time_report_view, name='time-report'),
 ]
