@@ -6,6 +6,7 @@ from django.views import generic
 from django.db.models import Sum
 #  from django.contrib import messages
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.paginator import Paginator
 from dashboard.models import StudentMentorCard, StudentSession
 from .forms import CreateSession, EditSession
 
