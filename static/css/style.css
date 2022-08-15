@@ -2,3 +2,52 @@
 .table-row{
     cursor:pointer;
     }
+
+/* CSS for sortable tables */
+/* inspired by https://github.com/tofsjonas/sortable */
+
+.sortable th:hover {
+    color: #fff;
+  }
+  
+  .sortable th {
+    color: #949da0;
+    cursor: pointer;
+    text-align: left;
+    vertical-align: baseline;
+    white-space: nowrap;
+  }
+  
+  .content-row:hover {
+    background-color: #b4c889;
+  }
+  
+  .sortable th:hover::after {
+    color: inherit;
+    font-size: 1.2em;
+    content: ' \025B8';
+  }
+  
+  .sortable th::after {
+    font-size: 1.2em;
+    color: transparent;
+    content: ' \025B8';
+  }
+  
+  .sortable th.dir-d {
+    color: #fff;
+  }
+  
+  .sortable th.dir-d::after {
+    color: inherit;
+    content: ' \025BE';
+  }
+  
+  .sortable th.dir-u {
+    color: #fff;
+  }
+  
+  .sortable th.dir-u::after {
+    color: inherit;
+    content: ' \025B4';
+  }
