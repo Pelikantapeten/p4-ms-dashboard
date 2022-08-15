@@ -34,9 +34,12 @@ class MentorCardDetails(generic.DetailView):
 
 class SessionList(generic.ListView):
     """
-    View class for list of sessions
+    View class for mentorcards
     """
     model = StudentSession
+    session_list = StudentSession.objects.all()
+    paginator = Paginator(session_list, 10)
+    paginate_by = 10
 
 
 class SessionDetalis(generic.DetailView):
