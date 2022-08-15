@@ -3,6 +3,7 @@
   <head>
     <title>MDash</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
     {% block body %}
@@ -85,5 +86,9 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <!-- Bootstrap JS bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- custom js -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- Sortable js -->
+    <script src="{% static 'js/sortable.js' %}"></script>
   </body>
 </html>
