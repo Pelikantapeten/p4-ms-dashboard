@@ -1,18 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Your sessions:</h1>
-  
-  <ul>
-    {% for studentsession in studentsession_list %}
-    {% if request.user == studentsession.mentor %}
-      <br>
-      <li>
-        Session: <a href="{{ studentsession.get_absolute_url }}">{{ studentsession }}</a>
-      </li>
-      <br>
-    {% endif %}
-    {% endfor %}
-  </ul>
-  <a href="{% url 'sessionsubmit' %}">Create a new session</a>
+
+  <div class="container mt-5 col-sm-7">   
+    <div class="card mb-4">
+      <div class="card-body">
+        <h2>{{request.user}} sessions</h2>
+        <div class="container">         
+          <table class="table sortable">
+            <thead class="bg-dark">
+              <tr>
+                <th>Student</th>
+                <th>Date of Session</th>
+                <th>Project</th>
+                <th>Subject</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for studentsession in studentsession_list %}
+              {% if request.user == studentsession.mentor %}
+              <tr class='table-row content-row' data-href="{{ studentsession.get_absolute_url }}">
+                <td>{{ studentsession }}</td>
+                <td>{{ studentsession.session_date }}</td>
+                <td>{{ studentsession.get_type_display }}</td>
+                <td>{{ studentsession.get_subject_display }}</td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+<a href="{% url 'sessionsubmit' %}">Create a new session</a>
+
   {% endblock content %}
