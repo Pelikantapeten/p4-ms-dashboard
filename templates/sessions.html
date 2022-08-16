@@ -7,7 +7,9 @@
   <div class="container col-sm-7">   
     <div class="card mb-4">
       <div class="card-body">
-        <div class="container">         
+        <div class="container">
+          <a href="#" data-toggle="modal" class="float-right text-dark" data-target="#helpModal"> <i class="fa-solid fa-circle-question"></i></a>
+          <a href="{% url 'sessionsubmit' %}" class="float-right mr-2 text-dark"><i class="fa-solid fa-circle-plus"></i></a>         
           <table class="table sortable">
             <thead class="bg-dark">
               <tr>
@@ -53,9 +55,27 @@
           </ul>
           {% endif %}
         </div>
+        <p><a href="{% url 'sessionsubmit' %}" class="btn btn-secondary btn-block">Add new session</a></p>
       </div>
     </div>
   </div>
-<a href="{% url 'sessionsubmit' %}">Create a new session</a>
-
+  <!-- Information Modal with user instructions -->
+  <div class="modal fade" id="helpModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Help Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"><i class="fa-solid fa-circle-question"></i> Student Sessions</h4>
+        </div>
+        <!-- Logout Modal body -->
+        <div class="modal-body">
+          Here is a list of your previous sessions you have created. You can sort the list based on the headings in the table. Click on a session to see details or edit the session.
+        </div>
+        <!-- Logout Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Got it!</button>
+        </div>
+      </div>
+    </div>
+  </div>
   {% endblock content %}
