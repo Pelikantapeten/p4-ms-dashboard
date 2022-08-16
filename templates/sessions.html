@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-  <div class="container mt-5 col-sm-7">   
+  <div class="container mt-5 col-sm-7">
+    <h1>{{request.user}}'s sessions</h1> 
+  </div>
+  <div class="container col-sm-7">   
     <div class="card mb-4">
       <div class="card-body">
-        <h2>{{request.user}} sessions</h2>
         <div class="container">         
           <table class="table sortable">
             <thead class="bg-dark">
