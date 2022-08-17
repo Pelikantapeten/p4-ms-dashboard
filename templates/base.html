@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     {% block body %}
     <!-- Navbar-top -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -78,10 +78,50 @@
         </div>
       </div>
     </div>
+    {% endblock %}
     {% block content %}
+
+
     {% endblock %}
-    {% endblock %}
-    
+    <!-- Footer -->
+    <footer class="bg-dark mt-auto">
+      <div class="container py-5">
+        <div class="row justify-content-center py-3">
+          <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+            <h6 class="text-muted font-weight-bold mb-2">MDash</h6>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="#" class="text-muted">About us</a></li>
+              <li class="mb-2"><a href="#" class="text-muted">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-lg-0">
+            <h6 class="text-muted font-weight-bold mb-2">Location</h6>
+            <p class="text-muted">
+              MDash<br>
+              Ringleksvagen 26<br>
+              132 51 Saltsjo-Boo<br>
+              Sweden
+            </p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-lg-0">
+            <h6 class="text-muted font-weight-bold mb-2">Contact</h6>
+            <p class="text-muted">
+              <i class="fa-solid fa-phone"></i>: +46 73 501 7993<br>
+              <i class="fa-solid fa-at"></i>: mats(a)sweora.se<br>
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-lg-0">
+            <h6 class="text-muted font-weight-bold mb-2">Follow us!</h6>
+            <p class="text-muted mb-4">Interested in more solutions from us? Please follow us on social media!</p>
+            <ul class="list-inline mt-4">
+              <li class="list-inline-item"><a href="https://twitter.com" target="_blank" title="twitter"><i class="fa-brands fa-2x fa-square-twitter text-muted"></i></a></li>
+              <li class="list-inline-item"><a href="https://facebook.com" target="_blank" title="facebook"><i class="fa-brands fa-2x fa-square-facebook text-muted"></i></a></li>
+              <li class="list-inline-item"><a href="https://instagram.com" target="_blank" title="instagram"><i class="fa-brands fa-2x fa-square-instagram text-muted"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- Scripts -->
     <!-- JQuery -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
