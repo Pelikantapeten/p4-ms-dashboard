@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="container mt-5 col-sm-7">
-    <h1>{{request.user}}'s sessions</h1> 
-  </div>
-  <div class="container col-sm-7">   
-    <div class="card mb-4">
-      <div class="card-body">
-        <div class="container">
+<div class="container col-lg-12 mb-5">
+  <div class="card container mt-5">
+    <div class="card-body container">
+      <h1>{{request.user}}'s sessions</h1> 
+    </div> 
+      <div class="container">
           <a href="#" data-toggle="modal" class="float-right text-dark" data-target="#helpModal"> <i class="fa-solid fa-circle-question"></i></a>
           <a href="{% url 'sessionsubmit' %}" class="float-right mr-2 text-dark"><i class="fa-solid fa-circle-plus"></i></a>         
           <table class="table sortable">
@@ -54,8 +53,7 @@
             {% endif %}
           </ul>
           {% endif %}
-        </div>
-        <p><a href="{% url 'sessionsubmit' %}" class="btn btn-secondary btn-block">Add new session</a></p>
+          <p><a href="{% url 'sessionsubmit' %}" class="btn btn-secondary btn-block">Add new session</a></p>
       </div>
     </div>
   </div>
@@ -63,15 +61,15 @@
   <div class="modal fade" id="helpModal">
     <div class="modal-dialog">
       <div class="modal-content">
-        <!-- Help Modal Header -->
+        <!-- Information Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title"><i class="fa-solid fa-circle-question"></i> Student Sessions</h4>
         </div>
-        <!-- Logout Modal body -->
+        <!-- Information Modal body -->
         <div class="modal-body">
           Here is a list of your previous sessions you have created. You can sort the list based on the headings in the table. Click on a session to see details or edit the session.
         </div>
-        <!-- Logout Modal footer -->
+        <!-- Information Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-success" data-dismiss="modal">Got it!</button>
         </div>
