@@ -79,3 +79,8 @@
     background-color: #292b2c !Important;
     border: solid 1px #292b2c;
 }
+
+/* Changes colors of links in tabs */
+#session-detail-list a {
+  color: #949da0;
+}
