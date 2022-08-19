@@ -1,21 +1,48 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h2>{{ studentsession.StudentMentorCard }}</h2>
-
-<ul>
- <li><strong>Date of session:</strong> {{ studentsession.session_date }}</li>
- <li><strong>Duration of session:</strong> {{ studentsession.time_spent }} Minutes</li>
- <li><strong>Type of session:</strong> {{ studentsession.get_type_display }}</li>
- <li><strong>Subject of session:</strong> {{ studentsession.get_subject_display }}</li>
- <li><strong>Session notes:</strong>
-    <ul>
-        <li><p>{{ studentsession.summary }}</p></li>
-    </ul>
-</li>
-<li><a href="{% url 'sessionedit' studentsession.pk %}">Edit Session</a></li>
-<li><a href="{% url 'delete-session' studentsession.pk %}">Delete Session</a></li>
-</ul>
+<div class="container col-6 mt-5">
+  <h2>{{ studentsession.StudentMentorCard }} - {{ studentsession.session_date }}</h2>
+  <a href="#" data-toggle="modal" class="float-right text-dark" data-target="#helpModal"> <i class="fa-solid fa-circle-question"></i></a>
+</div>
+<div class="container mb-5 col-6">
+  <div class="card">
+    <div class="card-header bg-dark">
+      <ul class="nav nav-tabs card-header-tabs" id="session-detail-list" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" href="#details" role="tab" aria-controls="Session details" aria-selected="true">Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="#summary" role="tab" aria-controls="Summary of session" aria-selected="false">Summary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#links" role="tab" aria-controls="Project links" aria-selected="false">Links</a>
+        </li>
+      </ul> 
+    </div>
+    <div class="card-body">
+      <div class="tab-content mt-3">
+        <div class="tab-pane active" id="details" role="tabpanel">
+          <p class="card-text"><strong>Type of session</strong>: {{ studentsession.get_type_display }}</p>
+          <p class="card-text"><strong>Session subject</strong>: {{ studentsession.get_subject_display }}</p>
+          <p class="card-text"><strong>Duration</strong>: {{ studentsession.time_spent }} minutes</p>
+          <a href="{% url 'delete-session' studentsession.pk %}" class="btn btn-danger float-right">Delete Session</a>
+          <a href="{% url 'sessionedit' studentsession.pk %}" class="btn btn-secondary float-right mr-2">Edit Session</a>
+        </div>   
+        <div class="tab-pane" id="summary" role="tabpanel" aria-labelledby="history-tab">  
+          <p class="card-text">{{ studentsession.summary }}</p>
+          <a href="{% url 'sessionedit' studentsession.pk %}" class="btn btn-secondary float-right mr-2">Edit Session</a>
+        </div> 
+        <div class="tab-pane" id="links" role="tabpanel" aria-labelledby="deals-tab">
+          <p class="card-text"><strong>Project URL</strong>: {{ studentsession.project_link }}</p>
+          <p class="card-text"><a href="{{ studentsession.project_link }}" class="btn btn-secondary" target="_blank">Live Project</a></p>
+          <p class="card-text"><strong>Project Repository</strong>: {{ studentsession.project_repo }}</p>
+          <p class="card-text"><a href="{{ studentsession.project_repo }}" class="btn btn-secondary" target="_blank">Repository</a></p>
+          <a href="{% url 'sessionedit' studentsession.pk %}" class="btn btn-secondary float-right mr-2">Edit Session</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock content %}
