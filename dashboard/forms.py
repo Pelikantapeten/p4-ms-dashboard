@@ -116,6 +116,8 @@ class CreateSession(forms.ModelForm):
         model = StudentSession
         fields = (
             'StudentMentorCard',
+            'project_link',
+            'project_repo',
             'summary',
             'session_date',
             'time_spent',
@@ -124,6 +126,8 @@ class CreateSession(forms.ModelForm):
         )
         labels = {
             'StudentMentorCard': 'Student',
+            'project_link': 'Project URL',
+            'project_repo': 'Project repository',
             'summary': 'Write a summary of the session',
             'session_date': 'Choose date of the session',
             'time_spent': 'Choose lenght of the session',
@@ -165,6 +169,8 @@ class EditSession(forms.ModelForm):
         """
         model = StudentSession
         fields = (
+            'project_link',
+            'project_repo',
             'summary',
             'session_date',
             'time_spent',
@@ -172,6 +178,8 @@ class EditSession(forms.ModelForm):
             'subject',
         )
         labels = {
+            'project_link': 'Project URL',
+            'project_repo': 'Project repository',
             'summary': 'Write a summary of the session',
             'session_date': 'Choose date of the session',
             'time_spent': 'Choose lenght of the session',
