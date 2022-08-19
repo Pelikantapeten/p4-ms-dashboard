@@ -174,6 +174,12 @@ class StudentSession(models.Model):
         blank=False
         )
     session_date = models.DateField('Session date', null=True, blank=False)
+    project_link = models.URLField('Projent URL', max_length=200, blank=True)
+    project_repo = models.URLField(
+        'Project repository',
+        max_length=200,
+        blank=True
+        )
 
     TIME_OF_SESSION = (
         (15, '15 minutes'),
