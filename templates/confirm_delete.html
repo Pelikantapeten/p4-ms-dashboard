@@ -32,5 +32,26 @@
     </div>
   </div>
 </div>
+<!-- Information Modal with user instructions  -->
+<div class="modal fade" id="helpModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Help Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title"><i class="fa-solid fa-circle-question"></i> Delete session</h4>
+            </div>
+            <!-- Help Modal body -->
+            <div class="modal-body">
+                Press "Confirm" to delete the session. Remember that this is a 
+                permanent action and that your session can't be restored. If you don't want to delete your session just 
+                press "Cancel".
+            </div>
+            <!-- Help Modal footer --> 
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Got it!</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endif %}
 {% endblock content %}
