@@ -1,13 +1,57 @@
 {% extends "base.html" %}
-
 {% block content %}
-    {% if searched %}
-    <h1>You Searched for {{ searched }}</h1>
-    <br/>
-    {% for student in students %}
-      {{ student }}<br/>
-    {% endfor %}
-    {% else %}
-    <h1>You did not perform a search for a student!</h1>
-    {% endif %}
+<div class="container col-lg-4 mb-5">
+  <div class="card container mt-5 border-0">
+    <div class="card-body container">
+      <h1>Search results</h1> 
+    </div> 
+      <div class="container">
+            <a href="#" data-toggle="modal" class="float-right text-dark" data-target="#helpModal"> <i class="fa-solid fa-circle-question"></i></a>
+        <table class="table sortable">
+        <thead class="bg-dark">
+          <tr>
+            <th>Student name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if searched %}
+            {% for student in students %}
+            <tr class='table-row content-row' data-href="{{ student.get_absolute_url }}">
+              <td>{{ student }}</td>
+            </tr>
+            {% empty %}
+            <tr class='content-row'>
+              <td>No student matches your search!</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <td>You need to enter at least one letter to perform a search</td> 
+            {% endif %}
+          </tbody>
+        </table>
+        <!-- Pagination inspired by https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html -->
+        {% if is_paginated %}
+        <ul class="pagination justify-content-center">
+          {% if page_obj.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+          {% else %}
+          <li class="disabled page-item"><a class="page-link" href="#">&laquo;</a></li>
+          {% endif %}
+          {% for i in paginator.page_range %}
+          {% if page_obj.number == i %}
+          <li class="active page-item"><a class="page-link" href="#">{{ i }} <span class="sr-only page-link">(current)</span></a></li>
+          {% else %}
+          <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+          {% endfor %}
+          {% if page_obj.has_next %}
+          <li class="page-item"><a  class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+          {% else %}
+          <li class="disabled page-item"><a class="page-link" href="#">&raquo;</a></li>
+          {% endif %}
+        </ul>
+        {% endif %}
+      </div>
+  </div>
+</div>
 {% endblock content %}
