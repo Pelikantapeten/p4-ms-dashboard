@@ -1,25 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
-
-
-<div class="col-12">
-    <div>
-        {% if user.is_authenticated %}
-        <div class="col-sm-6">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2>Create student session:</h2>
-                    <hr />
-                    <form method="POST" enctype="multipart/form-data">
-                        {{ form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
+<div class="container col-6 mt-5">
+    <h2>Create a session</h2>
+    <button id="back-button" class="back-button float-left"><i class="fa-solid fa-circle-chevron-left"></i></button>
+    <a href="#" data-toggle="modal" class="float-right text-dark" data-target="#helpModal"> <i class="fa-solid fa-circle-question"></i></a>
+</div>
+<div class="container mb-5 col-6">
+    {% if user.is_authenticated %}
+    <div class="card">
+        <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+                {{ form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
         </div>
-        {% endif %}
     </div>
+    {% endif %}
 </div>
 {% endblock content %}
