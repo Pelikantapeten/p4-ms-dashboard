@@ -1,20 +1,63 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>List of mentors student cards</h1>
-  {% if studentmentorcard_list %}
-  <ul>
-    {% for studentmentorcard in studentmentorcard_list %}
-    {% if request.user == studentmentorcard.mentor %}
-      <br>
-      <li>
-        Name: <a href="{{ studentmentorcard.get_absolute_url }}">{{ studentmentorcard.student }}</a> 
-      </li>
-      <br>
-    {% endif %}
-    {% endfor %}
-  </ul>
-  {% else %}
-    <p>There are no paird students with mentors</p>
-  {% endif %}
+<div class="container col-lg-6 mb-5">
+  <div class="card container mt-5 border-0">
+    <div class="card-body container">
+      <h1>{{request.user}}'s students</h1> 
+    </div> 
+      <div class="container">
+        <button id="back-button" class="back-button float-left"><i class="fa-solid fa-circle-chevron-left"></i></button>
+        <a href="#" data-toggle="modal" class="float-right text-dark" data-target="#helpModal"> <i class="fa-solid fa-circle-question"></i></a>
+        <table class="table sortable">
+        <thead class="bg-dark">
+          <tr>
+            <th>Student</th>
+            <th>Program start</th>
+            <th>Program end</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if studentmentorcard_list %}
+            {% for studentmentorcard in studentmentorcard_list %}
+            {% if request.user == studentmentorcard.mentor %}
+            <tr class="table-row content-row" data-href="{{ studentmentorcard.get_absolute_url }}">
+              <td>{{ studentmentorcard.student }}</td>
+              <td>{{ studentmentorcard.student.date_program_start }}</td>
+              <td>{{ studentmentorcard.student.date_program_end }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            {% else %}
+            <tr class="table-row">
+              <td>You don't have any students paired with your profile</td>
+            </tr>
+            {% endif %}
+          </tbody>
+        </table>
+        <!-- Pagination inspired by https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html -->
+        {% if is_paginated %}
+        <ul class="pagination justify-content-center">
+          {% if page_obj.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+          {% else %}
+          <li class="disabled page-item"><a class="page-link" href="#">&laquo;</a></li>
+          {% endif %}
+          {% for i in paginator.page_range %}
+          {% if page_obj.number == i %}
+          <li class="active page-item"><a class="page-link" href="#">{{ i }} <span class="sr-only page-link">(current)</span></a></li>
+          {% else %}
+          <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+          {% endfor %}
+          {% if page_obj.has_next %}
+          <li class="page-item"><a  class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+          {% else %}
+          <li class="disabled page-item"><a class="page-link" href="#">&raquo;</a></li>
+          {% endif %}
+        </ul>
+        {% endif %}
+      </div>
+  </div>
+</div>
   {% endblock content %}
