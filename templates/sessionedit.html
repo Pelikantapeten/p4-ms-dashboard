@@ -19,4 +19,23 @@
     </div>
     {% endif %}
 </div>
+<!-- Information Modal with user instructions -->
+<div class="modal fade" id="helpModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Help Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"><i class="fa-solid fa-circle-question"></i> Create Session</h4>
+        </div>
+        <!-- Help Modal body -->
+        <div class="modal-body">
+          This is where you edit a created session. You are not allowed to change student. If you created a session for the wrong student. Please delete this session and create a new one.
+        </div>
+        <!-- Help Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Got it!</button>
+        </div>
+      </div>
+    </div>
+</div> 
 {% endblock content %}
