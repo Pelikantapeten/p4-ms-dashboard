@@ -9,4 +9,8 @@ $(document).ready(function($) {
         e.preventDefault()
         $(this).tab('show')
     });
+    $('#back-button').click(function(){
+        parent.history.back();
+        return false;
+    });
 });

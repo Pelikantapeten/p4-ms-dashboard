@@ -3,9 +3,10 @@
 {% block content %}
 <div class="container col-6 mt-5">
   <h2>{{ studentsession.StudentMentorCard }} - {{ studentsession.session_date }}</h2>
+  <button id="back-button" class="back-button float-left"><i class="fa-solid fa-circle-chevron-left"></i></button>
   <a href="#" data-toggle="modal" class="float-right text-dark" data-target="#helpModal"> <i class="fa-solid fa-circle-question"></i></a>
 </div>
-<div class="container mb-5 col-6">
+<div class="container mb-1 col-6">
   <div class="card">
     <div class="card-header bg-dark">
       <ul class="nav nav-tabs card-header-tabs" id="session-detail-list" role="tablist">

@@ -84,3 +84,10 @@
 #session-detail-list a {
   color: #949da0;
 }
+
+/* Back Button */
+.back-button {
+  border: none;
+  padding: 0;
+  background: none;
+}
