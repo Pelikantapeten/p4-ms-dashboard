@@ -139,6 +139,7 @@ class CreateSession(forms.ModelForm):
         }
         help_texts = {
             'summary': None,
+            'time_spent': None,
             'type': None,
             'subject': None,
         }
