@@ -30,6 +30,7 @@ class MentorCardDetails(generic.DetailView):
     Detailed view class for mentorcards
     """
     model = StudentMentorCard
+    context_object_name = 'card'
 
 
 class SessionList(generic.ListView):
