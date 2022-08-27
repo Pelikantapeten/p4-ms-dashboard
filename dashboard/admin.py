@@ -9,7 +9,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.sites.models import Site
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
-from .models import Student, StudentMentorCard, StudentSession
+from .models import Student, StudentMentorCard, StudentSession, MentorNotes
 
 from .forms import UserAdminCreationForm, UserAdminChangeForm
 
@@ -59,5 +59,6 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.register(User, UserAdmin)
 admin.site.register(StudentMentorCard)
+admin.site.register(MentorNotes)
 admin.site.register(Student)
 admin.site.register(StudentSession)
