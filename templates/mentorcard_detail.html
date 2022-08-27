@@ -3,9 +3,23 @@
 {% block content %}
 <h1>Student</h1>
 
+<p><strong>Name:</strong> {{ card }}</a></p>
+<p><strong>Email:</strong> {{ card.student_email}}</p>
+<p><strong>Github profile:</strong> {{ card.student_github }}</p>
+<p><strong>Slack:</strong> {{ card.slack_name }}</p>
+<p><strong>Linkedin:</strong> {{ card.student_linkedin }}</p>
+<p><strong>Full summary:</strong> {{ card.summary }}</p>
 
-<p><strong>Name:</strong> {{ studentmentorcard.student }}</a></p>
-<p><strong>Full summary:</strong> {{ studentmentorcard.summary }}</p>
+<ul>
+{% for notes in card.mentornotes_set.all %}
+<li>
+    {{ notes }}
+    <li>
+        {{ notes.created_date}}
+    </li>
+</li>
+{% endfor %}
+</ul>
 
 
 {% endblock content %}
