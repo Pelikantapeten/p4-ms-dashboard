@@ -30,7 +30,7 @@ class UserAdmin(BaseUserAdmin):
     Class to display the UserAdmin options for create and change
     users as Admin
     """
-    
+
     form = UserAdminChangeForm
     add_form = UserAdminCreationForm
 
