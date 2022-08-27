@@ -6,6 +6,7 @@ from django.contrib.auth.models import (
     BaseUserManager,
     AbstractBaseUser,
 )
+from django.utils import timezone
 # Used to generate URLs by reversing the URL patterns
 from django.urls import reverse
 
@@ -150,6 +151,42 @@ class StudentMentorCard(models.Model):
         Returns the URL to access a detail record for this student card.
         """
         return reverse('student-mentor-card', args=[str(self.id)])
+
+
+class MentorNotes(models.Model):
+    """
+    Allows the mentor to create short notes
+    connected to the student
+    """
+    student_card = models.ForeignKey(
+        'StudentMentorCard', on_delete=models.SET_NULL, null=True
+        )
+
+    mentor_note = models.TextField(
+        max_length=500,
+        help_text='A note on a Student',
+        blank=True
+        )
+
+    created_date = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        """
+        Meta fields
+        """
+        ordering = ['created_date']
+
+    def __str__(self):
+        """
+        String that represents the model object
+        """
+        return str(self.mentor_note)
+
+    def get_absolute_url(self):
+        """
+        Returns the URL to access a detailed note
+        """
+        return reverse('mentor-notes', args=[str(self.id)])
 
 
 class StudentSession(models.Model):
