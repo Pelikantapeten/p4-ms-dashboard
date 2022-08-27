@@ -127,10 +127,26 @@ class StudentMentorCard(models.Model):
     student = models.ForeignKey(
         'Student', on_delete=models.SET_NULL, null=True
         )
+    student_email = models.CharField(
+        'Student email',
+        max_length=200,
+        blank=True
+        )
     summary = models.TextField(
         max_length=2000,
         help_text='Enter a summary of Student '
         'overall progress from Mentor perspective.',
+        blank=True
+        )
+    student_github = models.URLField(
+        'Student GitHub',
+        max_length=200,
+        blank=True
+        )
+    slack_name = models.CharField('Slack name', max_length=200, blank=True)
+    student_linkedin = models.URLField(
+        'Student linkedin',
+        max_length=200,
         blank=True
         )
     # List of mentors that can be connected to the student.
