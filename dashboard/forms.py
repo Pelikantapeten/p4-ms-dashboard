@@ -216,7 +216,7 @@ class CreateNote(forms.ModelForm):
         }
 
         help_texts = {
-
+            'mentor_note': None,
         }
 
     def __init__(self, *args, **kwargs):
