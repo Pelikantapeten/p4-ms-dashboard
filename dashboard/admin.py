@@ -1,8 +1,13 @@
 """
 Admin rules for dashboard app
 """
+from functools import update_wrapper
+from django.http import Http404
+from django.views.decorators.cache import never_cache
+from django.views.decorators.csrf import csrf_protect
 from allauth.account.models import EmailAddress
 from allauth.socialaccount.models import SocialToken, SocialAccount, SocialApp
+
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth import get_user_model
@@ -23,6 +28,25 @@ admin.site.unregister(Group)
 admin.site.unregister(SocialToken)
 admin.site.unregister(SocialAccount)
 admin.site.unregister(SocialApp)
+
+
+def admin_view(view, cacheable=False):
+    """
+    Dissallow non admins and courseadministrators to access admin.
+    Found information on Stackoverflow to solve this.
+    """
+    def inner(request, *args, **kwargs):
+        if not request.user.is_active and not request.user.is_staff:
+            raise Http404()
+        return view(request, *args, **kwargs)
+
+    if not cacheable:
+        inner = never_cache(inner)
+
+    if not getattr(view, 'csrf_exempt', False):
+        inner = csrf_protect(inner)
+
+    return update_wrapper(inner, view)
 
 
 class UserAdmin(BaseUserAdmin):
