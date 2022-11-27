@@ -234,3 +234,36 @@ class CreateNote(forms.ModelForm):
                 Q(mentor=user) | Q(mentor=user)
                 )
             self.fields['student_card'].queryset = student_card
+
+
+class EditStudent(forms.ModelForm):
+    """
+    Form for editing a student card
+    """
+    class Meta:
+        """
+        Generate which fields should be displayed.
+        """
+        model = StudentMentorCard
+        fields = (
+            'student_email',
+            'student_github',
+            'slack_name',
+            'student_linkedin',
+            'summary',
+        )
+        labels = {
+            'student_email': 'Email',
+            'student_github': 'Github',
+            'slack_name': 'Slack',
+            'student_linkedin': 'Linkedin',
+            'summary': 'Summary',
+        }
+        help_texts = {
+            'student_email': None,
+            'student_github': None,
+            'slack_name': None,
+            'student_linkedin': None,
+            'summary': None,
+        }
+
