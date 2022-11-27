@@ -68,8 +68,8 @@ class User(AbstractBaseUser):
         unique=True,
     )
     is_active = models.BooleanField(default=True)
-    staff = models.BooleanField('Mentor', default=False)
-    admin = models.BooleanField('Course manager', default=False)
+    staff = models.BooleanField('Course Administrator', default=False)
+    admin = models.BooleanField('Superadmin', default=False)
     name = models.CharField('Name', max_length=80, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
