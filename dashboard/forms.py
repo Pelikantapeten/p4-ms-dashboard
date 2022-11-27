@@ -212,6 +212,7 @@ class CreateNote(forms.ModelForm):
             'mentor_note',
         )
         labels = {
+            'student_card': 'Student',
             'mentor_note': 'Note',
         }
 
