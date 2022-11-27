@@ -2,7 +2,24 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-Du är inloggad
+  <div class="container mb-1 col-6 mt-5">
+    <div class="card">
+      <div class="card-header bg-dark">
+        <h2 class="text-light">Wellcome to MDash!</h2>
+      </div>
+      <div class="card-body">
+        <h3>Wellcome Mentors</h3>
+        <p>If you are logged on as a mentor a good place to start is to look at the students that has been assigned to you. You can also look and edit previous sessions with students as well as delete them.</p>
+        <p>Please know that all your sessions and notes are shared with the course administrator.</p>
+      </div>
+      <div class="card-body">
+        <h3>Wellcome Administrators</h3>
+        <p>If you are logged on as an Administrator please access the administrator panel using this link: <a href="{% url 'admin:index' %}">Course Administrators</a>
+        <hr>
+        <p>For evaluation purposes for this MVP: Requests for features and bugs can be sent to <strong>mats.simonsson@sweora.se</strong></p>
+    </div>
+    </div>
+  </div> 
   {% else %}
   <div class="container mb-1 col-6 mt-5">
     <div class="card">
