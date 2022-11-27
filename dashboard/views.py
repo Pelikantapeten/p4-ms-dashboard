@@ -8,7 +8,7 @@ from django.db.models import Sum
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.paginator import Paginator
 from dashboard.models import StudentMentorCard, StudentSession, MentorNotes
-from .forms import CreateSession, EditSession, CreateNote
+from .forms import CreateSession, EditSession, CreateNote, EditStudent
 
 
 def start_page(request):
@@ -31,6 +31,16 @@ class MentorCardDetails(generic.DetailView):
     """
     model = StudentMentorCard
     context_object_name = 'card'
+
+
+class UpdateStudent(UpdateView):
+    """
+    View to updated existing student
+    """
+    model = StudentMentorCard
+    template_name = 'studentedit.html'
+    form_class = EditStudent
+    success_url = '../mentorcards/'
 
 
 class SessionList(generic.ListView):
