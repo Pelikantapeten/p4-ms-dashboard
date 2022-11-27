@@ -27,14 +27,14 @@
             <p class="card-text"><strong>Email:</strong> {{ card.student_email}}</p>
             <p class="card-text"><strong>Slack:</strong> {{ card.slack_name}}</p>
             <p class="card-text"><i>{{ card.summary }}</i></p>
-            <a href="" class="btn btn-secondary float-right mr-2">Edit Student</a>
+            <a href="{% url 'studentupdate' card.pk %}" class="btn btn-secondary float-right mr-2">Edit Student</a>
           </div>   
           <div class="tab-pane" id="links" role="tabpanel" aria-labelledby="">  
             <p class="card-text"><strong>GitHub:</strong> {{ card.student_github }}</p>
             <p class="card-text"><a href="{{ card.student_github }}" class="btn btn-secondary" target="_blank">Visit Github</a></p>
             <p class="card-text"><strong>Linkedin</strong>: {{ card.student_linkedin }}</p>
             <p class="card-text"><a href="{{ card.student_linkedin }}" class="btn btn-secondary" target="_blank">Linkedin</a></p>
-            <a href="" class="btn btn-secondary float-right mr-2">Edit Student</a>
+            <a href="{% url 'studentupdate' card.pk %}" class="btn btn-secondary float-right mr-2">Edit Student</a>
           </div> 
           <div class="tab-pane" id="notes" role="tabpanel" aria-labelledby="">
             
@@ -54,7 +54,7 @@
                   {% endfor %}
                 </tbody>
               </table>
-            <a href="" class="btn btn-secondary float-right mr-2">Edit Student</a>
+              <a href="{% url 'studentupdate' card.pk %}" class="btn btn-secondary float-right mr-2">Edit Student</a>
             <a href="{% url 'createnote' %}" class="btn btn-secondary float-right mr-2">Add note</a>
           </div>
         </div>
