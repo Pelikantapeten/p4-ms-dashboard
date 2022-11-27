@@ -74,7 +74,7 @@ EMAIL_HOST = os.environ.get('SMTP_URL')
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('SECRET_EMAIL_KEY')
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
