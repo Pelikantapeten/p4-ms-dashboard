@@ -1,6 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Wellcome to MDash</h1>
-    <p>Please log in to see your students</p>
+{% if user.is_authenticated %}
+Du är inloggad
+  {% else %}
+  <div class="container mb-1 col-6 mt-5">
+    <div class="card">
+      <div class="card-header bg-dark">
+        <h2 class="text-light">MDash v0.8</h2>
+      </div>
+      <div class="card-body">
+        <h3>MDash</h3>
+        <p>MDash is a tool for mentors to handle interactions between students and themselves. The purpose of MDash is to let mentors keep track of their interactions with their students and also offer a way of sharing certain information with course administrators.</p>
+        <p>MDash was developed as a project for Code Institutes Full Stack Program and therefore their mentor model was used as a baseline for the project.</p>
+        <p>MDash is currently in an MVP stage for assessment and testing. If access is needed or wanted, please contact <strong>mats.simonsson@sweora.se</strong> with a request.</p>
+        <p>Please be sure to visit us on our social media channels for further information in regards of the development of MDash.</p>
+        <a class="primaryAction btn btn-success" href="{% url 'account_login' %}">Sign In</a>
+      </div>
+    </div>
+  </div>    
+  {% endif %}
 {% endblock content %}
