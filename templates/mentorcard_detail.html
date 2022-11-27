@@ -1,25 +1,83 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Student</h1>
-
-<p><strong>Name:</strong> {{ card }}</a></p>
-<p><strong>Email:</strong> {{ card.student_email}}</p>
-<p><strong>Github profile:</strong> {{ card.student_github }}</p>
-<p><strong>Slack:</strong> {{ card.slack_name }}</p>
-<p><strong>Linkedin:</strong> {{ card.student_linkedin }}</p>
-<p><strong>Full summary:</strong> {{ card.summary }}</p>
-
-<ul>
-{% for notes in card.mentornotes_set.all %}
-<li>
-    {{ notes }}
-    <li>
-        {{ notes.created_date}}
-    </li>
-</li>
-{% endfor %}
-</ul>
-
-
+  <div class="container col-6 mt-5">
+    <h2>{{ card }}</h2>
+    <button id="back-button" class="back-button float-left"><i class="fa-solid fa-circle-chevron-left"></i></button>
+    <a href="#" data-toggle="modal" class="float-right text-dark" data-target="#helpModal"> <i class="fa-solid fa-circle-question"></i></a>
+  </div>
+  <div class="container mb-1 col-6">
+    <div class="card mb-5">
+      <div class="card-header bg-dark">
+        <ul class="nav nav-tabs card-header-tabs" id="session-detail-list" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" href="#summary" role="tab" aria-controls="Summary" aria-selected="true">Summary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="#links" role="tab" aria-controls="Links" aria-selected="false">Links</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#notes" role="tab" aria-controls="Notes" aria-selected="false">Notes</a>
+          </li>
+        </ul> 
+      </div>
+      <div class="card-body">
+        <div class="tab-content mt-3">
+          <div class="tab-pane active" id="summary" role="tabpanel">
+            <p class="card-text"><strong>Email:</strong> {{ card.student_email}}</p>
+            <p class="card-text"><strong>Slack:</strong> {{ card.slack_name}}</p>
+            <p class="card-text"><i>{{ card.summary }}</i></p>
+            <a href="" class="btn btn-secondary float-right mr-2">Edit Student</a>
+          </div>   
+          <div class="tab-pane" id="links" role="tabpanel" aria-labelledby="">  
+            <p class="card-text"><strong>GitHub:</strong> {{ card.student_github }}</p>
+            <p class="card-text"><a href="{{ card.student_github }}" class="btn btn-secondary" target="_blank">Visit Github</a></p>
+            <p class="card-text"><strong>Linkedin</strong>: {{ card.student_linkedin }}</p>
+            <p class="card-text"><a href="{{ card.student_linkedin }}" class="btn btn-secondary" target="_blank">Linkedin</a></p>
+            <a href="" class="btn btn-secondary float-right mr-2">Edit Student</a>
+          </div> 
+          <div class="tab-pane" id="notes" role="tabpanel" aria-labelledby="">
+            
+            <table class="table sortable">
+              <thead class="bg-dark">
+                <tr>
+                  <th>Date</th>
+                  <th>Note</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for notes in card.mentornotes_set.all %}
+                  <tr>
+                    <td>{{ notes.created_date }}</td>
+                    <td>{{ notes }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            <a href="" class="btn btn-secondary float-right mr-2">Edit Student</a>
+            <a href="{% url 'createnote' %}" class="btn btn-secondary float-right mr-2">Add note</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Information Modal with user instructions -->
+  <div class="modal fade" id="helpModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Help Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"><i class="fa-solid fa-circle-question"></i> Student Details</h4>
+        </div>
+        <!-- Help Modal body -->
+        <div class="modal-body">
+          Here you can find more detailed information regarding your student. You can edit information and also write short notes.
+        </div>
+        <!-- Help Modal footer -->
+        <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Got it!</button>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock content %}
