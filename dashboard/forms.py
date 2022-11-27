@@ -4,7 +4,7 @@ Forms used by dashboard app
 from django import forms
 from django.contrib.auth import get_user_model
 from django.db.models import Q
-from .models import StudentSession, StudentMentorCard
+from .models import StudentSession, StudentMentorCard, MentorNotes
 from .widget import FormsDatePicker
 
 User = get_user_model()
@@ -196,3 +196,40 @@ class EditSession(forms.ModelForm):
             'type': None,
             'subject': None,
         }
+
+
+class CreateNote(forms.ModelForm):
+    """
+    Form for creating a note on a student
+    """
+    class Meta:
+        """
+        Generate which fields should be displayed.
+        """
+        model = MentorNotes
+        fields = (
+            'student_card',
+            'mentor_note',
+        )
+        labels = {
+            'mentor_note': 'Note',
+        }
+
+        help_texts = {
+
+        }
+
+    def __init__(self, *args, **kwargs):
+        """
+        Function that returns the Students
+        that belong to a specific mentor to the
+        selection of students in the form. Created
+        by searching for information on https://stackoverflow.com/
+        """
+        user = kwargs.pop('user', None)
+        super(CreateNote, self).__init__(*args, **kwargs)
+        if user:
+            student_card = StudentMentorCard.objects.filter(
+                Q(mentor=user) | Q(mentor=user)
+                )
+            self.fields['student_card'].queryset = student_card
