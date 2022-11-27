@@ -7,8 +7,8 @@ from django.db.models import Sum
 #  from django.contrib import messages
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.paginator import Paginator
-from dashboard.models import StudentMentorCard, StudentSession
-from .forms import CreateSession, EditSession
+from dashboard.models import StudentMentorCard, StudentSession, MentorNotes
+from .forms import CreateSession, EditSession, CreateNote
 
 
 def start_page(request):
@@ -151,3 +151,34 @@ def time_report_view(request):
         'time-report.html',
         context
     )
+
+
+class CreateNoteView(CreateView):
+    """
+    View for the submitform for creating
+    a student note.
+    """
+    model = MentorNotes
+    form_class = CreateNote
+    template_name = 'notessubmit.html'
+    success_url = '../mentorcards/'
+
+    def form_valid(self, form):
+        """
+        Function that validates the user
+        when using the form
+        """
+        form.instance.mentor = self.request.user
+        return super(CreateNoteView, self).form_valid(form)
+
+    def get_form_kwargs(self, *args, **kwargs):
+        """
+        Function matching the query from
+        CreateSession in forms and matches with
+        current user.
+        """
+        kwargs = super(CreateNoteView, self).get_form_kwargs(
+            *args, **kwargs
+            )
+        kwargs['user'] = self.request.user
+        return kwargs
