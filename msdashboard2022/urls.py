@@ -59,4 +59,9 @@ urlpatterns = [
         name="search_students"
     ),
     path('time-report/', views.time_report_view, name='time-report'),
+    path(
+        'createnote/',
+        views.CreateNoteView.as_view(),
+        name='createnote'
+    ),
 ]
