@@ -64,4 +64,9 @@ urlpatterns = [
         views.CreateNoteView.as_view(),
         name='createnote'
     ),
+    path(
+        'studentupdate/<int:pk>',
+        views.UpdateStudent.as_view(),
+        name='studentupdate'
+    ),
 ]
