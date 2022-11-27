@@ -1,8 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Time Report:</h1>
-
- <p> Total number of mentoring hours: {{ hours_total }} </p>
-
+<div class="container col-lg-12 mb-5">
+  <div class="card container mt-5 border-0">
+    <div class="card-body container">
+      <h1>Time Report - {{request.user}}</h1> 
+    </div> 
+      <div class="container">
+            <a href="#" data-toggle="modal" class="float-right text-dark" data-target="#helpModal"> <i class="fa-solid fa-circle-question"></i></a>
+        <table class="table sortable">
+        <thead class="bg-dark">
+          <tr>
+            <th>Activity</th>
+            <th>Total time spent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Student sessions</td>
+              <td>{{ hours_total }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+<!-- Information Modal with user instructions -->
+<div class="modal fade" id="helpModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Help Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"><i class="fa-solid fa-circle-question"></i> Time Report</h4>
+      </div>
+      <!-- Help Modal body -->
+      <div class="modal-body">
+        Here you can see the total number of hours you spent so far on mentoring sessions. In future versions this report will be more detailed.
+      </div>
+      <!-- Help Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Got it!</button>
+      </div>
+    </div>
+  </div>
+</div> 
 {% endblock %}
