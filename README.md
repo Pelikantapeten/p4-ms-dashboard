@@ -165,6 +165,17 @@ Testing with lighthouse gives the following results:
 
 ![Validator testing](static/images-readme/lighthouse.png)
 
+Testing and validating using pep8 validations tools:
+
+All python code in this project is not perfect. Some are showing errors of lines that are to long, especially in settings.py and in other files that are installed as part of django. The majority of the problems are not causing errors and are not from code that I actually wrote. Therefore it's not possible to produce a clean slate of a perfect record since some of the code is not perfect but still functional.
+
+
+Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
+
+![Validator testing](static/images-readme/cssvalidator.png)
+
+
+
 ### Unfixed Bugs
 
 - URLS of AllAuth is broken and returns error
@@ -181,9 +192,9 @@ and it is important that the database is created in Heroku so that the database 
 
 Before migrating the database I used the following cofigvars:
 
-key: SECRET_KEY | value
-key: PORT | value
-key: DATABASE_URL | value
+ - key: SECRET_KEY | value
+ - key: PORT | value
+ - key: DATABASE_URL | value
 
 All values was provided by Heroku and I used env.py to store the values for my project and used the variables for the values in settings.py for the Database url and secret key. Heroku also needs to be set as an allowed host in settings.py (please see settings.py in this repository for details).
 

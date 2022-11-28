@@ -266,4 +266,3 @@ class EditStudent(forms.ModelForm):
             'student_linkedin': None,
             'summary': None,
         }
-
