@@ -274,8 +274,9 @@ Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 
 ### Unfixed Bugs
 
-- URLS of AllAuth is broken and returns error
-  - Update settings.py with 'allauth.socialaccount' as installed app to correct
+- Responsiveness is bad on smaller screens. Been trying to fix it but for some reason it is problematic.
+- Notes can't be created withouth choosing student, auto fill is not working correctly
+- Help modal sometimes shows up at bottom at screen, can't figure out why.
 
  [Back to top](#ms-dashboard)
 
