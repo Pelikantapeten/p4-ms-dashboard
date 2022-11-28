@@ -38,7 +38,7 @@ A live version of this project can be found at this url: https://ms-dashboard202
   + [Bugs during development](#bugs-during-development "Bugs during development")
   + [Validator Testing](#validator-testing "Validator Testing")
   + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
-+ [Development and Deployment](#development-and-deployment "Development and Deployment")
++ [Deployment](#deployment "deployment")
 + [Content](#content "Content")
 + [Credits](#credits "Credits")
 
@@ -164,11 +164,28 @@ List contains bugs encountered during development and solved.
 
  [Back to top](#ms-dashboard)
 
-## Development and Deployment
+## Deployment
 
-To be added
+The site was deployed to Heroku. The steps to deploy are as follows:
 
-After those steps were taken the application was deployed at the following link: 
+The project was developed using Gitpod with regular commits to Github. In order to deploy to Heroku a requirements.txt file needs to be created
+and it is important that the database is created in Heroku so that the database can be migrated before actual deployment.
+
+Before migrating the database I used the following cofigvars:
+
+key: SECRET_KEY | value
+key: PORT | value
+key: DATABASE_URL | value
+
+All values was provided by Heroku and I used env.py to store the values for my project and used the variables for the values in settings.py for the Database url and secret key. Heroku also needs to be set as an allowed host in settings.py (please see settings.py in this repository for details).
+
+Migration of database can be done prior of deployment. If set up correctly your environment will use Herokus database and not local sqlite.
+
+Before the push to GitHub a procfile needs to be created with the content: web: gunicorn msdashboard2022.wsgi
+
+After deployment push to Github the project was deployed from Heroku using the "Deploy" tab.
+
+After those steps were taken the application was deployed at the following link: https://ms-dashboard2022.herokuapp.com/
 
 ## Content 
 
