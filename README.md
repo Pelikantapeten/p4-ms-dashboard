@@ -148,8 +148,16 @@ To be added
 
 ## Testing 
 
-To be added
+All testing in this project has been done manually during the development process, the project has not followed the principles of test driven development. Testing has for the most part followed the track of the user stories. Everytime a user story is concluded testing has occured. Each version has been tested before commited and the testing has been conducted in these steps:
 
+ - Code validation
+ - Functionality (That it actually does what it is supposed to)
+ - Bug elimination
+ - CRUD (On those sections when this occur)
+
+During the development process a lot of bugs has been discovered. A portion of them are presented in the Bugs during development section.
+
+Functionality testing has been conducted by the author of the project together with selected class mates and selected resources that are aknowledged in the Credit section.
 
 ### Bugs during development
 
@@ -169,12 +177,9 @@ Testing and validating using pep8 validations tools:
 
 All python code in this project is not perfect. Some are showing errors of lines that are to long, especially in settings.py and in other files that are installed as part of django. The majority of the problems are not causing errors and are not from code that I actually wrote. Therefore it's not possible to produce a clean slate of a perfect record since some of the code is not perfect but still functional.
 
-
 Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 
 ![Validator testing](static/images-readme/cssvalidator.png)
-
-
 
 ### Unfixed Bugs
 
