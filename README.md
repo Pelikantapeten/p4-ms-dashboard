@@ -1,4 +1,4 @@
-# MS-Dashboard
+# MDash
 
 ![Responsive screenshot](static/images-readme/responsive.png)
 
@@ -252,7 +252,18 @@ Functionality testing has been conducted by the author of the project together w
 
 ### Bugs during development
 
-List contains bugs encountered during development and solved.
+There have been several small bugs during development. Most of them has been resolved by fixing faulty syntax but also a lot of them has been caused by logical errors. More sever bugs have been:
+
+- All users had admin rights
+  - Solution: Creating function that closes admin for non-staff users (Mentors)
+- Problems in getting a proper datestamp using date-selector in create session
+  - Solution: Creating a date-picker in widget.py and use widget in forms
+- Problem: Not allowing users to log in with only e-mail
+  - Solution: Scrapping auth user model and creating new custom user models based on BaseUserManager.
+- Problem: Custom CSS not "active" on heroku
+  - Solution: Set Collect Static to 0 and not use debug mode in settings.py
+
+Andy many more smaller ones that caused different types of errors but mostly were connected to bad syntax.
 
 ### Validator Testing 
 
