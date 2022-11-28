@@ -157,9 +157,13 @@ List contains bugs encountered during development and solved.
 
 ### Validator Testing 
 
-Testing with https://validator.w3.org/ shows no errors on html
+Testing with https://validator.w3.org/ shows no errors on html:
 
 ![Validator testing](static/images-readme/htmlvalidator.png)
+
+Testing with lighthouse gives the following results:
+
+![Validator testing](static/images-readme/lighthouse.png)
 
 ### Unfixed Bugs
 
