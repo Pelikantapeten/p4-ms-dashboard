@@ -25,7 +25,7 @@ A live version of this project can be found at this url: https://ms-dashboard202
   + [User Stories](#user-stories "User Stories")
     + [Admin](#admin "Admin")
     + [Mentor](#mentor "Mentor")
-  + [Project Requirements](#project-requirements "Project Requirements")
+  + [Project Purpose](#project-purpose "Project Purpose")
   + [Design diagram](#design-diagram "Design diagram")
 + [Features](#features "Features")
   + [Existing Features](#existing-features "Existing Features")
@@ -94,9 +94,12 @@ As a **Mentor** I can **log the time I spent on a session** so that **I can get 
 
 As a **Mentor** I can **visit my profile page** so that **I can see the total time I spent on sessions**
 
-### Project Requirements
+### Project Purpose
 
-To be clarified
+From Code Institutes assessment guide:
+
+In this project, you'll build a Full-Stack site based on business logic used to control a centrally-owned dataset. You will set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset.
+
 
 ### Design diagram
 
@@ -106,9 +109,39 @@ To be clarified
 
 ## Features 
 
-To be added
+Mdash consists of two main features for Mentors:
+
+Add information regarding a student
+Add information regarding a session with a student
+
+Course administrators main features are:
+
+Add a mentor
+Add a student
+Pair a mentor and a student
+Take part of information from mentors
 
 ### Existing Features
+
+To be added
+
+#### Feature 1
+
+To be added
+
+#### Feature 1
+
+To be added
+
+#### Feature 1
+
+To be added
+
+#### Feature 1
+
+To be added
+
+#### Feature 1
 
 To be added
 
