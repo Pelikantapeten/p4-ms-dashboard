@@ -27,6 +27,8 @@ A live version of this project can be found at this url: https://ms-dashboard202
     + [Mentor](#mentor "Mentor")
   + [Project Purpose](#project-purpose "Project Purpose")
   + [Design diagram](#design-diagram "Design diagram")
+  + [Site Navigation](#site-navigation "Site Navigation")
+  + [Database schema](#database-schema "Database schema")
 + [Features](#features "Features")
   + [Existing Features](#existing-features "Existing Features")
     + [Sign In](#sign-in "Sign In")
@@ -121,6 +123,11 @@ The idea of MDash was to keep it simple. Focusing on the data and the CRUD was t
 ![Wireframe2](static/images-readme/wire2.png)
 ![Wireframe3](static/images-readme/wire3.png)
 
+### Site navigation
+
+![Site navigation](static/images-readme/sitenav.png)
+
+### Database Schema
 
 
 [Back to top](#ms-dashboard)
