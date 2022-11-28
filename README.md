@@ -21,10 +21,10 @@ A live version of this project can be found at this url: https://ms-dashboard202
 
 + [UX](#ux "UX")
   + [User Demographic](#user-demographic "User Demographic")
-  + [User Stories](#user-stories "User Stories")
-    + [User reading](#user-reading "User reading")
-    + [User submitting](#user-submitting "User submitting")
   + [User Goals](#user-goals "User goals")
+  + [User Stories](#user-stories "User Stories")
+    + [Admin](#admin "Admin")
+    + [Mentor](#mentor "Mentor")
   + [Project Requirements](#project-requirements "Project Requirements")
   + [Design diagram](#design-diagram "Design diagram")
 + [Features](#features "Features")
@@ -46,13 +46,19 @@ A live version of this project can be found at this url: https://ms-dashboard202
 
 ### User Demographic
 
-This application is supposed to serve a purpose for mentors that want to ease their interactions with students. Mentors that wants to keep all there information regarding a student in one place at at the same time want to share the information with the course administrators.
+This application is ment for:
+ - All mentors that wants a tool to store information regarding their interactions with students.
+ - All Course Administrators that wants to pair mentors and students and have access to the information.
+
+### User Goals
+
+To have all information stored in one place that is related to the interactions between mentor/students and mentors/course administrators. To have a good overview of how many sessions and interactions that has taken place and also a place to store information regarding these interactions in the form of notes.
 
 ### User Stories
 
 The following user stories has been implemented in the project. User Stories are based on two types of users, the course manager and the mentor. More user stories will be implemented in future versions.
 
-Admin
+#### Admin
 
 As a **course manager/admin** I can **create a mentor profile** so that **the mentor can use the dashboard as a tool**
 
@@ -66,7 +72,7 @@ As a **course manager/admin** I can **view a list of students** so that **I can 
 
 As a **course manager/admin** I can **select a student** so that **I can change the students selected mentor**
 
-Mentor
+#### Mentor
 
 As a **mentor** I can **view a list of students** so that **I can see the ones assigned to me**
 
