@@ -1,16 +1,21 @@
 # MS-Dashboard
 
-<!-- ![Responsive screenshot](path) -->
+![Responsive screenshot](static/images-readme/responsive.png)
 
 # The purpose with this project
 
-Mentor/Student Dashboard
+MDash is a tool that is supposed to help mentors in their interactions with students. MDash was developed as a student project for the Code Institute Full Stack Program. In it’s blueprint MDash is an extensive tool. This MVP was developed to be used for testing to be able to further assess functionality and to create the next steps for the applications road map.MDash offers Mentors a way to store detailed information regarding their sessions they hold with students. It also allows them to see their students and make quick notes that can be used to create the final summary.
 
-This project is the fourth of five milestone projects that needs to be completed in order for me to receive a diploma in Software Development from The Code Institute https://codeinstitute.net/
+All the information that Mentors write is automatically shared with the course administrator.
+
+During the MVP no external registrations of users is allowed so users that want to test need to contact the system administrator in order to receive access.
 
 Required technologies for this project: 
 
-A live version of this project can be found at this url: 
+ - HTML, CSS, JavaScript, Python+Django
+ - Relational database
+
+A live version of this project can be found at this url: https://ms-dashboard2022.herokuapp.com/
 
 # Table of Content
 
