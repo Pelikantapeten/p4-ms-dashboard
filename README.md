@@ -189,6 +189,7 @@ After those steps were taken the application was deployed at the following link:
 
 ## Content 
 
+All content in the app and on the site has been produced by the author of the project.
 
 ## Credits 
 
