@@ -46,11 +46,11 @@ A live version of this project can be found at this url: https://ms-dashboard202
 
 ### User Demographic
 
-To be added
+This application is supposed to serve a purpose for mentors that want to ease their interactions with students. Mentors that wants to keep all there information regarding a student in one place at at the same time want to share the information with the course administrators.
 
 ### User Stories
 
-To be clarified
+The following user stories has been implemented in the project. User Stories are based on two types of users, the course manager and the mentor. More user stories will be implemented in future versions.
 
 Admin
 
@@ -81,6 +81,12 @@ As a **mentor** I can **create a session for a student** so that **I can write a
 As a **mentor** I can **select session notes** so that **I can share them with the course manager**
 
 As a **mentor** I can **select a session** so that **I can edit the session details and delete it if necessary**
+
+As a **Mentor** I can **search for my students** so that **I can get quick and easy access to their profiles**
+
+As a **Mentor** I can **log the time I spent on a session** so that **I can get total time spent on students**
+
+As a **Mentor** I can **visit my profile page** so that **I can see the total time I spent on sessions**
 
 ### Project Requirements
 
