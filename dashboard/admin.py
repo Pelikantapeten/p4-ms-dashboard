@@ -74,7 +74,7 @@ class UserAdmin(BaseUserAdmin):
             'classes': ('wide',),
             'fields': ('email', 'password', 'password_2')}),
         ('Personal info', {'fields': ('name',)}),
-        ('Type of User', {'fields': ('admin', 'staff',)}),
+        ('Type of User (leave empty when creating a mentor)', {'fields': ('admin', 'staff',)}),
     )
     search_fields = ['email']
     ordering = ['email']
