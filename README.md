@@ -129,6 +129,7 @@ The idea of MDash was to keep it simple. Focusing on the data and the CRUD was t
 
 ### Database Schema
 
+![Schema](static/images-readme/schema.png)
 
 [Back to top](#ms-dashboard)
 
