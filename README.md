@@ -31,8 +31,9 @@ A live version of this project can be found at this url: https://ms-dashboard202
   + [Existing Features](#existing-features "Existing Features")
     + [Feature 1](#feature-1 "Feature 1")
   + [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
-+ [Technologies used](#technologies-used "Technologies used")
-  + [Database](#database "Database")
++ [Languages used](#languages-used "Languages used")
+  + [Frameworks and libraries and tools](#frameworks-and-libraries-and-tools "Frameworks and libraries and tools")
+  + [Installed packages](#installed-packages "Installed packages") 
 + [Testing](#testing "Testing")
   + [Bugs during development](#bugs-during-development "Bugs during development")
   + [Validator Testing](#validator-testing "Validator Testing")
@@ -109,14 +110,41 @@ To be added
 
 [Back to top](#ms-dashboard)
 
-## Technologies and libraries used
+## Languages used
 
-List to be updated
+ - HTML5
+ - CSS3
+ - Javascript
+ - Python
+ - Django
+ - SQL - Postgres
 
-### Database
+### Frameworks and libraries and tools
 
-Schema and diagram to be added
+ - GitPod
+ - GitHub
+ - Django
+ - Bootstrap
+ - DrawSQL
+ - Jquery
 
+### Installed packages
+
+ - asgiref==3.5.2
+ - cloudinary==1.29.0
+ - dj-database-url==0.5.0
+ - dj3-cloudinary-storage==0.0.6
+ - Django==3.2.13
+ - django-allauth==0.51.0
+ - django-crispy-forms==1.14.0
+ - gunicorn==20.1.0
+ - oauthlib==3.2.0
+ - psycopg2==2.9.3
+ - PyJWT==2.4.0
+ - python3-openid==3.2.0
+ - pytz==2022.1
+ - requests-oauthlib==1.3.1
+ - sqlparse==0.4.2
 
 ## Testing 
 
