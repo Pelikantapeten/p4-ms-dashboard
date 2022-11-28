@@ -29,7 +29,19 @@ A live version of this project can be found at this url: https://ms-dashboard202
   + [Design diagram](#design-diagram "Design diagram")
 + [Features](#features "Features")
   + [Existing Features](#existing-features "Existing Features")
-    + [Feature 1](#feature-1 "Feature 1")
+    + [Sign In](#sign-in "Sign In")
+    + [List of students](#list-of-students "List of students")
+    + [Student details](#student-details "Student details")
+    + [List of sessions](#List-of-sessions "List of sessions")
+    + [Create session](#create-session "Create session")
+    + [Session details](#session-details "Session details")
+    + [Edit session](#edit-session "Edit session")
+    + [Delete session](#delete-session "delete-session")
+    + [Create note](#create-note "Create Note")
+    + [Search student](#search-student "Search Student")
+    + [Search results](#search-results "Search Results")
+    + [Time Report](#time-report "Time Report")
+    + [Course Admin Features](#course-admin-features "Course Admin Features")
   + [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
 + [Languages used](#languages-used "Languages used")
   + [Frameworks and libraries and tools](#frameworks-and-libraries-and-tools "Frameworks and libraries and tools")
@@ -123,31 +135,59 @@ Take part of information from mentors
 
 ### Existing Features
 
-To be added
+#### Sign In
 
-#### Feature 1
+![Sign in](static/images-readme/signin.png)
 
-To be added
+#### List of students
 
-#### Feature 1
+![List of students](static/images-readme/listofstudents.png)
 
-To be added
+#### Student details
 
-#### Feature 1
+![Student details](static/images-readme/detailsstudent.png)
+![Student details 2](static/images-readme/detailsstudent2.png)
 
-To be added
+#### List of sessions
 
-#### Feature 1
+![List of sessions](static/images-readme/listofsessions.png)
 
-To be added
+#### Create session
 
-#### Feature 1
+![Create Session](static/images-readme/createsession.png)
 
-To be added
+#### Session details
 
-#### Feature 1
+![Session Details](static/images-readme/detailsession.png)
+![Session Details2](static/images-readme/summarysession.png)
 
-To be added
+#### Edit session
+
+![Edit session](static/images-readme/editsession.png)
+
+#### Delete session
+
+![Delete session](static/images-readme/deletesession.png)
+
+#### Create note
+
+![Create note](static/images-readme/createnote.png)
+
+#### Search student
+
+![Search student](static/images-readme/searchstudent.png)
+
+#### Search results
+
+![Search results](static/images-readme/searchresults.png)
+
+#### Time report
+
+![Time Report](static/images-readme/timereport.png)
+
+#### Course Admin Features
+
+Course administrators can do all the features as mentors in front-end. The course administrators use the django admin pane in this mvp for student and mentor creation. They also use the admin pane for pairing of students and mentors by creating a student-mentor-card.
 
 ## Features Left to Implement
 
