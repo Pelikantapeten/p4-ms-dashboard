@@ -115,7 +115,13 @@ In this project, you'll build a Full-Stack site based on business logic used to 
 
 ### Design diagram
 
-To be clarified
+The idea of MDash was to keep it simple. Focusing on the data and the CRUD was the initial intention and using Bootstrap as much as possible. The initial design templates was very simple. Focus was to be able to incoorporate all the user stories in a clean, neat and functional way.
+
+![Wireframe1](static/images-readme/wire1.png)
+![Wireframe2](static/images-readme/wire2.png)
+![Wireframe3](static/images-readme/wire3.png)
+
+
 
 [Back to top](#ms-dashboard)
 
