@@ -157,6 +157,10 @@ List contains bugs encountered during development and solved.
 
 ### Validator Testing 
 
+Testing with https://validator.w3.org/ shows no errors on html
+
+![Validator testing](static/images-readme/htmlvalidator.png)
+
 ### Unfixed Bugs
 
 - URLS of AllAuth is broken and returns error
