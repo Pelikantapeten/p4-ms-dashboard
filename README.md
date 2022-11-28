@@ -191,7 +191,13 @@ Course administrators can do all the features as mentors in front-end. The cours
 
 ## Features Left to Implement
 
-To be added
+Following features are planned_
+
+ - Password reset function using email
+ - Export of time report as csv
+ - Registration function for students
+ - Front end for Course administrators
+ - File repository for upload on student profiles
 
 [Back to top](#ms-dashboard)
 
