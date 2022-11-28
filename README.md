@@ -310,4 +310,18 @@ All content in the app and on the site has been produced by the author of the pr
 
 ### For code inspiration, design inputs, help and advice.
 
+I have consulted numerous websites, individuals and slack channels to get support for the code. No code block is directly copied (a part from the ones stated in the comments in the code) but some generates from information I gathered from other developers and sites:
+
+ - [W3 Schools](https://www.w3schools.com) for helping me understand Django.
+ - [Code Institute](https://codeinstitute.net/) for all course material leading up to this project.
+ - [Stack Overflow](https://stackoverflow.com/) for hours of searching and troubleshooting.
+
+ And all the "hundreds of sites" I partially visited during my trouble shooting. All code that I have borrowed have been commented in the code.
+
 ### Acknowledgment
+
+ - [Martina Terlevic](https://www.linkedin.com/in/martinaterlevic/) My fantastic mentor at Code Institute, thank you for your support, feedback, bug testing and great sense of humor.
+ - [Angelica Guimarães Amorim](https://www.linkedin.com/in/angelica-amorim/) Thank you for everything, and I mean everything, best work-mate and idea generator!
+ - [Lauren-Nicole Popich](https://www.linkedin.com/in/lauren-nicole-popich-1ab87539/) Thank you for testing dealing with my stress over this project, you are a life saver!
+
+ [Am I Responsive](http://ami.responsivedesign.is/) was used to create the image on top of this ReadMe
